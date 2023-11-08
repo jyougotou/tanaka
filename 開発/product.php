@@ -1,11 +1,20 @@
 <?php require 'header.php'; ?>
-<?php require 'menu.php'; ?>
 <?php require 'db-connect.php'; ?>
 <form action="product.php" method="post">
     商品検索
     <input type="text" name="keyword">
-    <input type="submit" value="検索">
-</from>
+    <input type="submit" value="🔎">
+</form>
+<form action="login-input.php" method="post">
+    <input type="submit" value="ログイン">
+</form>
+<form action="login-input.php" method="post">
+    <input type="submit" value="ユーザー情報の更新">
+</form>
+<form action="cart.php" method="post">
+    <input type="submit" value="🛒">
+</form>
+
 <hr>
 <?php
 echo '<table>';
