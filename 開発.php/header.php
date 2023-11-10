@@ -2,6 +2,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>PHP Sample Programs</title>
+<title>ASOスポーツ用品サイト</title>
 </head>
 <body>

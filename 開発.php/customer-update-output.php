@@ -1,7 +1,6 @@
 <?php session_start(); ?>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
-<?php require 'menu.php'; ?> 
 <?php
 //$pdo=new PDO('mysql:host=mysql215.phy.lolipop.lan;dbname=LAA1516820-shop;charset=utf8',
 //'LAA1516820', 'Pass0830');
@@ -16,7 +15,7 @@ if(isset($_SESSION['customer'])){
     $sql->execute([$_POST['login']]);
 }
 if(empty($sql->fetchAll())){
-    if(isset($_SESSION['customer'])){
+    isset($_SESSION['customer'])
         $sql=$pdo->prepare('update customer set name=?, address=?,'.
                             'login=?, password=? where id=?');
         $sql->execute([
@@ -26,17 +25,15 @@ if(empty($sql->fetchAll())){
             'id'=>$id, 'name'=>$_POST['name'],
             'address'=>$_POST[ 'address'],'login'=>$_POST['login'],
             'password'=>$_POST['password']];
-        echo 'お客様情報を更新しました。';
-    }else{
-        $sql=$pdo->prepare('insert into customer values(null,?,?,?,?)');
-        $sql->execute([
-            $_POST['name'],$_POST['address'],
-            $_POST['login'],$_POST['password']]);
-        echo 'お客様情報を登録しました。';
-    }
+        echo '更新が完了しました。';
+        echo '<form action = "customer-insert-output.php methods = "post">';
+        echo '<input type= "submit" value = "検索画面へ">';
+        echo '</form>';
 } else {
-    echo 'ログイン名がすでに使用されていますので、変更してください。';
-
+    echo '入力内容に誤りがあります';
+    echo '<form action = "customer-update-input.php methods = "post">';
+    echo '<input type= "submit" value = "戻る">';
+    echo '</form>';
 }
 ?>
 <?php require 'footer.php'; ?>

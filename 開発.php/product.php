@@ -12,7 +12,7 @@
         <input type="submit" value="ログイン">
     </form>
     <!--会員情報更新画面に遷移する-->
-    <form action="login-input.php" method="post">
+    <form action="customer-update-input.php" method="post">
         <input type="submit" value="ユーザー情報の更新">
     </form>
     <!--カート画面に遷移する-->
