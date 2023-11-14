@@ -2,20 +2,20 @@
 <?php require 'db-connect.php'; ?>
 <?php require 'header.php'; ?>
 <?php
-unset($_SESSION['customer']);
+unset($_SESSION['Member']);
 $pdo=new PDO($connect,USER,PASS);
-$sql=$pdo->prepare('select * from customer where login=? and password=?');
-$sql->execute([$_POST['login'],$_POST['password']]);
+$sql=$pdo->prepare('select * from Member where member_mei=? and member_pass=?');
+$sql->execute([$_POST['member_mei'],$_POST['member_pass']]);
 foreach ($sql as $row){
-    $_SESSION['customer']=[
-        'id'=>$row['id'],'name'=>$row['name'],
-        'address'=>$row['address'],'login'=>$row['login'],
-        'password'=>$row['password']
+    $_SESSION['Member']=[
+        'member_number'=>$row['member_number'],'member_mei'=>$row['member_mei'],
+        'member_stay'=>$row['member_stay'],'member_fon'=>$row['member_fon'],
+        'member_pass'=>$row['member_pass']
     ];
 }
-if(isset($_SESSION['customer'])){
+if(isset($_SESSION['Member'])){
     // ログイン処理、成功の場合
-    echo 'いらっしゃいませ、',$_SESSION['customer']['name'],'さん。';
+    echo 'いらっしゃいませ、',$_SESSION['Member']['member_mei'],'さん。';
     echo '<form action = "product.php" method = "post">';
     echo '<input type = "submit" value = "商品画面へ">';
     echo '</form>';

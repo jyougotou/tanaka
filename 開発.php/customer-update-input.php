@@ -1,32 +1,33 @@
 <?php session_start(); ?>
 <?php require 'header.php'; ?>
 <?php
-$name=$address=$login=$password='';
+$member_mei=$member_stay=$member_fon=$member_pass='';
 
-if(isset($_SESSION['customer'])){
-    $name=$_SESSION['customer']['name'];
-    $address=$_SESSION['customer']['address'];
-    $login=$_SESSION['customer']['login'];
-    $password=$_SESSION['customer']['password'];
+if(isset($_SESSION['Member'])){
+    $member_mei=$_SESSION['Member']['member_mei'];
+    $member_stay=$_SESSION['Member']['member_stay'];
+    $member_fon=$_SESSION['Member']['member_fon'];
+    $member_pass=$_SESSION['Member']['member_pass'];
 }
-//ログイン画面に遷移する
-echo '<form action = "login-input.php methods = "post">';
+//商品画面に遷移する
+echo '<form action = "product.php" method = "post">';
 echo '<input type = "submit" value = "戻る">';
 echo '</form>';
-//ユーザー会員情報更新画面
-echo '<form action = "customer-output.php" method = "post">';
+//会員情報更新画面に遷移する
+echo '<form action = "customer-update-output.php" method = "post">';
 echo '<table>';
-echo '<tr><td>ユーザー名</td><td>';
-echo '<input type="text" name="name" value="', $name, '">';
+//requiredで未入力項目の摘出,ユーザー情報の更新
+echo '<tr><td><h3>ユーザー名<h3></td><td>';
+echo '<input type="text" required name="member_mei" value="', $member_mei, '">';
 echo '</td></tr>';
 echo '<tr><td><h3>住所<h3></td><td>';
-echo '<input type="text" name="address" value="', $address, '">';
+echo '<input type="text" required name="addmember_stayress" value="', $member_stay, '">';
 echo '</td></tr>';
-echo '<tr><td><h3>電話番号<h3>/td><td>';
-echo '<input type="text" name="login" value="', $login, '">';
+echo '<tr><td><h3>電話番号<h3></td><td>';
+echo '<input type="text" required name="member_fon" value="', $member_fon, '">';
 echo '</td></tr>';
 echo '<tr><td><h3>パスワード<h3></td><td>';
-echo '<input type="password" name="password" value="', $password, '">';
+echo '<input type="password" required name="member_pass" value="', $member_pass, '">';
 echo '</td></tr>';
 echo '</table>';
 echo '<input type = "submit" value = "更新">';

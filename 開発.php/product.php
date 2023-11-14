@@ -1,6 +1,7 @@
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
 <!--商品画面に遷移する-->
+<!--横並びにする-->
 <div style="display:inline-flex">
     <form action="product.php" method="post">
         商品検索

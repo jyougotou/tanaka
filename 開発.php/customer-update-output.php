@@ -2,34 +2,34 @@
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
 <?php
-//$pdo=new PDO('mysql:host=mysql215.phy.lolipop.lan;dbname=LAA1516820-shop;charset=utf8',
-//'LAA1516820', 'Pass0830');
 $pdo=new PDO($connect,USER,PASS);
 
-if(isset($_SESSION['customer'])){
-    $id=$_SESSION['customer']['id'];
-    $sql=$pdo->prepare('select * from customer where id!=? and login=?');
-    $sql->execute([$id, $_POST['login']]);
+if(isset($_SESSION['Member'])){
+    $member_number=$_SESSION['Member']['member_number'];
+    $sql=$pdo->prepare('select * from Member where member_number!=? and member_mei=?');
+    $sql->execute([$id, $_POST['member_mei']]);
 }else{
-    $sql=$pdo->prepare('select * from customer where login=?');
-    $sql->execute([$_POST['login']]);
+    $sql=$pdo->prepare('select * from Member where member_mei=?');
+    $sql->execute([$_POST['member_mei']]);
 }
 if(empty($sql->fetchAll())){
-    isset($_SESSION['customer'])
-        $sql=$pdo->prepare('update customer set name=?, address=?,'.
-                            'login=?, password=? where id=?');
+    isset($_SESSION['Member'])
+        $sql=$pdo->prepare('update Member set member_mei=?, member_stay=?,'.
+                            'member_fon=?, member_pass=? where member_number=?');
         $sql->execute([
-            $_POST['name'], $_POST['address'],
-            $_POST['login'], $_POST['password'], $id]);
-        $_SESSION['customer']=[
-            'id'=>$id, 'name'=>$_POST['name'],
-            'address'=>$_POST[ 'address'],'login'=>$_POST['login'],
-            'password'=>$_POST['password']];
+            $_POST['member_mei'], $_POST['member_stay'],
+            $_POST['member_fon'], $_POST['member_pass'], $member_number]);
+        $_SESSION['Member']=[
+            'member_number'=>$member_number, 'member_mei'=>$_POST['member_mei'],
+            'member_stay'=>$_POST['member_stay'],'member_fon'=>$_POST['member_fon'],
+            'member_pass'=>$_POST['member_pass']];
         echo '更新が完了しました。';
-        echo '<form action = "customer-insert-output.php methods = "post">';
+        //商品検索画面に遷移する
+        echo '<form action = "customer-insert-output.php" method = "post">';
         echo '<input type= "submit" value = "検索画面へ">';
         echo '</form>';
 } else {
+    //入力内容に誤りがある場合の処理
     echo '入力内容に誤りがあります';
     echo '<form action = "customer-update-input.php methods = "post">';
     echo '<input type= "submit" value = "戻る">';
