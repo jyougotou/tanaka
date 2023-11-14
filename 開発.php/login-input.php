@@ -7,8 +7,8 @@
     </form>
     <!--ログイン画面に遷移する-->
     <form action = "login-output.php" method = "post">
-        ログイン名<input type = "text" name = "login" required><br>
-        パスワード<input type = "password" name = "password" required><br>    
+        ログイン名<input type = "text" name = "member_mei" required><br>
+        パスワード<input type = "password" name = "member_pass" required><br>    
     <input type = "submit" value = "ログイン">
     </form>
 <?php require 'footer.php'; ?>

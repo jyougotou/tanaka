@@ -1,18 +1,17 @@
 <?php session_start(); ?>
 <?php require 'header.php'; ?>
-<?php require 'menu.php'; ?>
 <?php
-$id = $_POST['id'];
-if(!isset($_SESSION['product'])){
-    $_SESSION['product'] = [];
+$id = $_POST['shohin_number'];
+if(!isset($_SESSION['Detail'])){
+    $_SESSION['Detail'] = [];
 }
 $count = 0;
-if(isset($_SESSION['product'][$id])){
-    $count = $_SESSION['product'][$id]['count'];
+if(isset($_SESSION['Detail'][$id])){
+    $count = $_SESSION['Detail'][$id]['count'];
 }
-$_SESSION['product'][$id] = [
-    'name' => $_POST['name'],
-    'price' => $_POST['price'],
+$_SESSION['Detail'][$id] = [
+    'shohin_number' => $_POST['shohin_number'],
+    'shohin_price' => $_POST['shohin_price'],
     'count' => $count + $_POST['count']
 ];
 echo '<p>カートに商品を追加しました。</p>';
