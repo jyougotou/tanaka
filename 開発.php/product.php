@@ -1,11 +1,11 @@
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
+
 <!--商品画面に遷移する-->
-<!--横並びにする-->
 <div style="display:inline-flex">
     <form action="product.php" method="post">
         商品検索
-        <input type="text" name="keyword">
+        <input type="text" name="keyword" value="<?php echo $_POST['keyword']; ?>">
         <input type="submit" value="🔎">
     </form>
     <!--ログイン画面に遷移する-->
@@ -23,38 +23,48 @@
 </div>
 
 <hr>
+
 <?php
-//プルダウン、カテゴリー
-echo '<form action = "product.php" method = "post">';
-    echo "<select name='kategori'>";
-        echo "<option value='ball'>ボール</option>";
-        echo "<option value='racket'>ラケット</option>";
-        echo "<option value='uniform'>ユニフォーム</option>";
-    echo "</select>";
-echo "</form>";
+//競技
+$pdo=new PDO($connect,USER,PASS);
+$sql=$pdo->prepare('select distinct shohin_sport from Detail');
+$sql->execute();
+echo '<select id="sport">';
+foreach($sql as $row){
+    echo '<option value="',$row['shohin_sport'],'">',$row['shohin_sport'],'</option>';
+}
+echo "</select>";
+//ブランド
+$sql=$pdo->prepare('select distinct shohin_burnd from Detail');
+$sql->execute();
+echo '<select id="burnd">';
+foreach($sql as $row){
+    echo '<option value="',$row['shohin_burnd'],'">',$row['shohin_burnd'],'</option>';
+}
+echo "</select>";
+//
 //ログアウトに遷移
 echo '<form action = "logout-input.php" method = "post">';
     echo '<input type = "submit" value = "ログアウト">';
 echo '</form>';
-//echo '<table>';
-//echo '<tr><th>商品番号</th><th>商品名</th><th>価格</th></tr>';
-//$pdo=new PDO($connect,USER,PASS);
-//if(isset($_POST['keyword'])){
-//    $sql=$pdo->prepare('select * from product where name like ?');
-//    $sql->execute(['%'.$_POST['keyword'].'%']);
-//}else{
-//    $sql=$pdo->query('select * from product');
-//}
-//foreach ($sql as $row){
-//    $id=$row['id'];
-//    echo '<tr>';
-//    echo '<td>', $id, '</td>';
-//    echo '<td>';
-//    echo '<a href="detail.php?id=', $id, '">', $row['name'], '</a>';
-//    echo '</td>';
-//    echo '<td>', $row['price'], '</td>';
-//    echo '</tr>';
-//}
-//echo '</table>';
-//?>
+echo '<table>';
+echo '<tr><th>商品番号</th><th>商品名</th><th>価格</th></tr>';
+if(isset($_POST['keyword'])){
+    $sql=$pdo->prepare('select * from Shohin where shohin_mei like ?');
+    $sql->execute(['%'.$_POST['keyword'].'%']);
+}else{
+    $sql=$pdo->query('select * from Shohin');
+}
+foreach($sql as $row){
+    $id=$row['shohin_number'];
+    echo '<tr>';
+    echo '<td>',$id,'</td>';
+    echo '<td>';
+    echo '<a href="detail.php?id=',$id,'">','<img src="',$row['shohin_gazo'],'" alt="商品画像"','</a>';
+    echo '</td>';
+    echo '<td>',$row[''],'</td>';
+    echo '</tr>';
+}
+echo '</table>';
+?>
 <?php require 'footer.php'; ?>
