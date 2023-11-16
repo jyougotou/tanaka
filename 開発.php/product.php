@@ -17,7 +17,7 @@
         <input type="submit" value="ユーザー情報の更新">
     </form>
     <!--カート画面に遷移する-->
-    <form action="cart.php" method="post">
+    <form action="cart-show.php" method="post">
         <input type="submit" value="🛒">
     </form>
 </div>
