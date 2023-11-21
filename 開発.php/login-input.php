@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login-input.css">
+    <link rel="stylesheet" href="css/login-input.css">
     <style>
         /* Add this style to increase the size of the text boxes */
         input[type="text"], input[type="password"] {
