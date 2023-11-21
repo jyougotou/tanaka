@@ -66,13 +66,6 @@ form input[type="password"]:hover {
 form input[type="submit"]:hover {
     background-color: #555;
 }
-.loginname{
-
-}
-
-.passname{
-    
-}
 /* 会員登録リンクとメッセージのスタイル */
 .hajimete{
     font-size: 20px;
