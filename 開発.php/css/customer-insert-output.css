@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../image/背景.jpg);
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px; /* ボタンとの間に余白を設定 */
+  }
+  
+  .form-btn {
+    width: 200px;
+  height: 500px;
+  background-color: #66CCFF;
+ 
+  font-size: 59px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  }
+  .form-back{
+    text-align: center;
+    width: 100px;
+    height: 60px;
+    background-color: #ccc;
+  }

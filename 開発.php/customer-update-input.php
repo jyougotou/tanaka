@@ -1,5 +1,14 @@
 <?php session_start(); ?>
 <?php require 'header.php'; ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/customer-update-input.css">
+    <title>Document</title>
+</head>
+<body>
 <?php
 $member_mei=$member_stay=$member_fon=$member_pass='';
 
@@ -10,6 +19,7 @@ if(isset($_SESSION['Member'])){
     $member_pass=$_SESSION['Member']['member_pass'];
 }
 //商品画面に遷移する
+echo '<h1>情報更新会員登録</h1>'
 echo '<form action = "product.php" method = "post">';
 echo '<input type = "submit" value = "戻る">';
 echo '</form>';
@@ -33,4 +43,7 @@ echo '</table>';
 echo '<input type = "submit" value = "更新">';
 echo '</form>';
 ?>
+</body>
+</html>
+
 <?php require 'footer.php'; ?>

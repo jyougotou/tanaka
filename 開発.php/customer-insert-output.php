@@ -1,6 +1,14 @@
 <?php session_start(); ?>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/customer-insert-output.css">
+    <title>Document</title>
+</head>
+<body>
 <?php
 $pdo=new PDO($connect,USER,PASS);
 
@@ -17,17 +25,20 @@ if(empty($sql->fetchAll())){
         $sql->execute([
             $_POST['member_mei'],$_POST['member_stay'],
             $_POST['member_fon'],$_POST['member_pass']]);
-        echo '会員登録が完了しまいした。';
+        echo '<p>会員登録が完了しました。</p>';
         //ログイン画面に遷移する
         echo '<form action = "login-input.php" method = "post">';
-        echo '<input type= "submit" value = "ログイン画面へ">';
+        echo '<input type= "submit" class = "form-btn" value = "ログイン画面">';
         echo '</form>';
 } else {
     //入力内容に誤りや、すでに使われている場合の処理
-    echo '入力内容に誤りがあります。';
+    echo '<p>入力内容に誤りがあります。</p>';
     echo '<form action = "customer-insert-input.php" methods = "post">';
-    echo '<input type= "submit" value = "戻る">';
+    echo '<input type= "submit" class = "form-back" value = "戻る">';
     echo '</form>';
 }
 ?>
+</body>
+</html>
+
 <?php require 'footer.php'; ?>

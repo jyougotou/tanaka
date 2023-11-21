@@ -12,7 +12,7 @@ body {
   
   /* フォームの項目 */
   tr{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   /* ラベル */
@@ -24,9 +24,9 @@ body {
   
   /* 入力欄 */
   .form-input {
-    width: calc(100% - 42px); /* ボーダーやパディング分を考慮した入力欄の幅を調整 */
-    padding: 12px; /* 入力欄のパディングを大きく */
-    font-size: 20px; /* 入力欄のフォントサイズを大きく */
+    width: calc(100% - 22px); /* ボーダーやパディング分を考慮した入力欄の幅を調整 */
+    padding: 30px; /* 入力欄のパディングを大きく */
+    font-size: 40px; /* 入力欄のフォントサイズを大きく */
     margin-bottom: 30px;
   }
   
