@@ -21,26 +21,26 @@ if(isset($_SESSION['Member'])){
 //商品画面に遷移する
 echo '<h1>情報更新会員登録</h1>';
 echo '<form action = "product.php" method = "post">';
-echo '<input type = "submit" value = "戻る">';
+echo '<input type = "submit" class = "back-btn" value = "戻る">';
 echo '</form>';
 //会員情報更新画面に遷移する
 echo '<form action = "customer-update-output.php" method = "post">';
 echo '<table>';
 //requiredで未入力項目の摘出,ユーザー情報の更新
-echo '<tr><td>ユーザー名</td><td>';
-echo '<input type="text" required name="member_mei" value="', $member_mei, '">';
+echo '<tr><td class = "form-label">ユーザー名</td><td>';
+echo '<input type="text" required name="member_mei" class = "form-input" value="', $member_mei, '">';
 echo '</td></tr>';
-echo '<tr><td>住所</td><td>';
-echo '<input type="text" required name="member_stay" value="', $member_stay, '">';
+echo '<tr><td class = "form-label">住所</td><td>';
+echo '<input type="text" required name="member_stay" class = "form-input" value="', $member_stay, '">';
 echo '</td></tr>';
-echo '<tr><td>電話番号</td><td>';
-echo '<input type="text" required name="member_fon" value="', $member_fon, '">';
+echo '<tr><td class = "form-label">電話番号</td><td>';
+echo '<input type="text" required name="member_fon" class = "form-input" value="', $member_fon, '">';
 echo '</td></tr>';
-echo '<tr><td>パスワード</td><td>';
-echo '<input type="password" required name="member_pass" value="', $member_pass, '">';
+echo '<tr><td class = "form-label">パスワード</td><td>';
+echo '<input type="password" required name="member_pass" class = "form-input" value="', $member_pass, '">';
 echo '</td></tr>';
 echo '</table>';
-echo '<input type = "submit" value = "更新">';
+echo '<input type = "submit" class = "submit-btn" value = "更新">';
 echo '</form>';
 ?>
 </body>
