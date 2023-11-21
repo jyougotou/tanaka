@@ -1,0 +1,45 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../image/背景.jpg);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    padding: 40px;
+    font-size: 50px;
+}
+
+.back{
+    background-color: #BBBBBB;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 5px solid;
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+}
+.out{
+    background-color: #d30000;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 5px solid;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+
+
+.back:hover{
+    background-color:#555555;
+}
+.out:hover{
+    background-color: rgba(139, 0, 0, 0.431)
+}
