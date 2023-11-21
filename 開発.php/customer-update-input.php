@@ -19,7 +19,7 @@ if(isset($_SESSION['Member'])){
     $member_pass=$_SESSION['Member']['member_pass'];
 }
 //商品画面に遷移する
-echo '<h1>情報更新会員登録</h1>'
+echo '<h1>情報更新会員登録</h1>';
 echo '<form action = "product.php" method = "post">';
 echo '<input type = "submit" value = "戻る">';
 echo '</form>';
