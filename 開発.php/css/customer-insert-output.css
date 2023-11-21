@@ -16,11 +16,11 @@ body {
   }
   
   .form-btn {
-    width: 200px;
-  height: 500px;
+    width: 100px;
+  height: 60px;
   background-color: #66CCFF;
  
-  font-size: 59px;
+  font-size: 10px;
   font-weight: bold;
   border: none;
   border-radius: 10px;
