@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
 <?php
@@ -18,8 +19,15 @@ foreach($sql as $row){
     echo '<input type="hidden" name="shohin_mei" value="', $row['shohin_mei'], '">';
     echo '<input type="hidden" name="shohin_price" value="', $row['shohin_price'], '">';
     echo '<input type="hidden" name="count" value="1">';
-    echo '<p><input type="submit" value="カートに入れる🛒">';
+    if(!empty($_SESSION['Member'])){
+        echo '<input type="submit" value="カートに入れる🛒">';
+    }
     echo '</form>';
+    if(empty($_SESSION['Member'])){
+        echo '<form action = "login-input.php" method = "post">';
+        echo '<input type="submit" value = "ログイン">';
+        echo '</form>';
+    }
     echo '<form action = "product.php" method = "post">';
     echo '<input type = "submit" value = "戻る">';
     echo '</form>';

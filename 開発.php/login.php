@@ -18,7 +18,7 @@
     <h1>ASOスポーツ用品サイト</h1>
     
     <!-- ログイン画面に遷移するフォームなど... -->
-    <form action="login-output.php" method="post">
+    <form action="product.php" method="post">
         <div class="form-group">
             <label for="member_mei" class="loginname">ログイン名</label>
             <input type="text" id="member_mei" name="member_mei" required><br>
