@@ -92,7 +92,7 @@
 ?>
 </form>
 <!--ログイン画面に遷移する-->
-<form action="login-input.php" method="post">
+<form action="login.php" method="post">
     <input type="submit" value="ログイン">
 </form>
 <!--会員情報更新画面に遷移する-->
