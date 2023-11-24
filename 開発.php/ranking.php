@@ -19,11 +19,17 @@
         echo '</select>',"\n";
         echo '<input type="submit" value="🔎">';
     echo '</form>';
-    $sql=$pdo->prepare('select * 
+    if(!empty($_POST['sport'])){
+        $sql=$pdo->prepare('select * 
                         from Shohin inner join Stock on Shohin.shohin_number = Stock.shohin_number inner join Detail on Stock.shohin_number = Detail.shohin_number
                         where Detail.shohin_sport=?
                         order by konyu_kazu desc limit 5');
-    $sql->execute([$_POST['sport']]);
+        $sql->execute([$_POST['sport']]);
+    }else{
+        $sql=$pdo->query('select * 
+                        from Shohin inner join Stock on Shohin.shohin_number = Stock.shohin_number inner join Detail on Stock.shohin_number = Detail.shohin_number
+                        order by konyu_kazu desc limit 5');
+    }
     echo '<table>',"\n";
     echo '<tr><th>順位</th><th>商品名</th><th>価格</th></tr>',"\n";
     $num=1;

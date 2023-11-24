@@ -43,6 +43,7 @@
         }
     echo '</select>',"\n";
     echo '<select name="price">',"\n";
+        if($_POST[''])
         echo '<option hidden value="">価格帯</option>';
         echo '<option value="">選択しない</option>';
         if(1==$_POST['price']){

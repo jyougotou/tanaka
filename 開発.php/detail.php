@@ -17,6 +17,7 @@ foreach($sql as $row){
     echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
     echo '<input type="hidden" name="shohin_mei" value="', $row['shohin_mei'], '">';
     echo '<input type="hidden" name="shohin_price" value="', $row['shohin_price'], '">';
+    echo '<input type="hidden" name="count" value="1">';
     echo '<p><input type="submit" value="カートに入れる🛒">';
     echo '</form>';
     echo '<form action = "product.php" method = "post">';
