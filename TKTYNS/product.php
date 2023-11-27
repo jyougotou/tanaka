@@ -99,7 +99,7 @@
             $price_1 = 0;
             $price_2 = 0;
     }
-    echo '<input type="submit" value="🔎">';
+    echo '<input type="submit" class = "ken" value="🔎">';
 ?>
 </form>
 <!--ログイン画面に遷移する-->
