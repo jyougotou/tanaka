@@ -149,3 +149,9 @@ form {
     top: 20px; /* 下部に配置 */
     right: 20px; /* 右側に配置 */
   }
+  .searchBox {
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+    padding: 10px; /* 内側の余白を追加 */
+  }

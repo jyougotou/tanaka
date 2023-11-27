@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
 <div class="form-container">
     <!--商品画面に遷移する-->
 <form action="product.php" method="post">
-<input type="text" name="keyword" placeholder="キーワードを検索" value="<?php echo isset($_POST['keyword']) ? $_POST['keyword'] : ''; ?>">
+<input type="text" name="keyword" placeholder="キーワードを検索" class = "searchBox" value="<?php echo isset($_POST['keyword']) ? $_POST['keyword'] : ''; ?>">
 <?php
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->query('select distinct shohin_sport from Detail');
@@ -52,6 +53,7 @@
         }
     echo '</select>',"\n";
     echo '<select name="price" class = "select-pr">',"\n";
+        if($_POST[''])
         echo '<option hidden value="">価格帯</option>';
         echo '<option value="">選択しない</option>';
 
@@ -103,9 +105,13 @@
 ?>
 </form>
 <!--ログイン画面に遷移する-->
-<form action="login-input.php" method="post">
-    <input type="submit"  class = "login" value="ログイン">
-</form>
+<?php
+    if(empty($_SESSION['Member'])){
+        echo '<form action="login-input.php" method="post">';
+                echo '<input type="submit" class = "login" value="ログイン">';
+        echo '</form>';
+    }
+?>
 <!--会員情報更新画面に遷移する-->
 <form action="customer-update-input.php" method="post">
     <input type="submit" class = "yuza" value="ユーザー情報の更新">
@@ -119,10 +125,13 @@
     <input type="submit" class = "ranking" value="ランキング">
 </form>
 <!--ログアウト画面に遷移する-->
-<form action = "logout-input.php" method = "post">
-    <input type = "submit" class = "log" value = "ログアウト">
-</form>
-
+<?php
+    if(!empty($_SESSION['Member'])){
+        echo '<form action = "logout-input.php" method = "post">';
+            echo '<input type = "submit" class = "log" value = "ログアウト">';
+        echo '</form>';
+    }
+?>
 <hr>
 
 <?php
