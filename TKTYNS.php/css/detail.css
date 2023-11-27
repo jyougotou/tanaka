@@ -1,0 +1,37 @@
+/* customer-insert-output.css */
+
+body {
+    background-image: url(../image/背景.jpg);
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    left: 20px;
+}
+
+form {
+    float: right;
+}
+
+p {
+    float: right;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: #333;
+    color: #fff;
+    float: right;
+}

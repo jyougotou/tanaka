@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/customer-insert-output.css">
-    <title>Document</title>
+    <title>detail</title>
 </head>
 <body>
 <?php
