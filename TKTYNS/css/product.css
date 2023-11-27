@@ -79,8 +79,8 @@ form {
     left: 10px; /* 左側に配置 */
   }
   .ranking {
-    width: 100px;
-    height: 30px;
+    width: 200px;
+    height: 60px;
     background-color: yellow;
     box-sizing: border-box;
     border: 5px solid #000;
