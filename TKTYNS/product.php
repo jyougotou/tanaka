@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
 <!DOCTYPE html>
@@ -53,7 +52,6 @@
         }
     echo '</select>',"\n";
     echo '<select name="price" class = "select-pr">',"\n";
-        if($_POST[''])
         echo '<option hidden value="">価格帯</option>';
         echo '<option value="">選択しない</option>';
 
@@ -105,13 +103,9 @@
 ?>
 </form>
 <!--ログイン画面に遷移する-->
-<?php
-    if(empty($_SESSION['Member'])){
-        echo '<form action="login-input.php" method="post">';
-                echo '<input type="submit" class = "login" value="ログイン">';
-        echo '</form>';
-    }
-?>
+<form action="login-input.php" method="post">
+    <input type="submit" class = "login" value="ログイン">
+</form>
 <!--会員情報更新画面に遷移する-->
 <form action="customer-update-input.php" method="post">
     <input type="submit" class = "yuza" value="ユーザー情報の更新">
@@ -125,13 +119,10 @@
     <input type="submit" class = "ranking" value="ランキング">
 </form>
 <!--ログアウト画面に遷移する-->
-<?php
-    if(!empty($_SESSION['Member'])){
-        echo '<form action = "logout-input.php" method = "post">';
-            echo '<input type = "submit" class = "log" value = "ログアウト">';
-        echo '</form>';
-    }
-?>
+<form action = "logout-input.php" method = "post">
+    <input type = "submit" class = "log" value = "ログアウト">
+</form>
+
 <hr>
 
 <?php

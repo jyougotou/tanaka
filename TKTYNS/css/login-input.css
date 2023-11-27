@@ -11,25 +11,15 @@ body{
 /* ヘッダーのスタイル */
 h1 {
     text-align: center;
-    padding: 50px;
+    padding: 40px;
     font-size: 50px;
-}
-
-/* フォームのコンテナのスタイル */
-form {
-    max-width: 400px;
-    margin: 20px auto;
-    font-size: 30px;
-    text-align: center;
-    font-weight: bold;
-
 }
 
 /* フォーム要素のコンテナのスタイル */
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 100px;
 }
 
 /* フォーム要素のスタイル */
@@ -37,9 +27,10 @@ form input[type="text"],
 form input[type="password"] {
     font-size: 30px;
     margin-top: 5px;
-    box-sizing: border-box; /* Changed from 100px to border-box for better sizing */
+    box-sizing: border-box;
     border: 5px solid;
-    width: 100%; /* Adjusted width to make the text boxes wider */
+    width: calc(100% - 10px); /* 幅を100%から余白の分を少なくしたサイズに設定 */
+    padding: 5px;
 }
 form input[type="text"]:hover,
 form input[type="password"]:hover {
@@ -47,25 +38,25 @@ form input[type="password"]:hover {
 }
 
 /* フォーム送信ボタンのスタイル */
-.login[type="submit"] {
+.login[type="submit"]{
     background-color: #66CCFF;
-    padding: 20px 25px;
-    font-size: 25px;
+    padding: 10px 15px;
+    font-size: 20px;
     cursor: pointer;
     border: 5px solid;
-    margin-top: 20px;
+    margin-top: 20px; /* ボタンを下に移動させるためのマージントップを追加 */
     position: absolute;
     bottom: 30px;
     right: 20px;
 }
 
-.newmember[type="submit"] {
+.newmember[type="submit"]{
     background-color: #43FF6B;
-    padding: 20px 25px;
+    padding: 10px 15px;
     font-size: 20px;
     cursor: pointer;
     border: 5px solid;
-    margin-top: 20px;
+    margin-top: 20px; /* ボタンを下に移動させるためのマージントップを追加 */
     position: absolute;
     bottom: 30px;
     left: 40px;
@@ -79,6 +70,7 @@ form input[type="submit"]:hover {
 .hajimete{
     font-size: 20px;
     position: absolute;
-    bottom: 120px;
+    bottom: 110px;
     left: 15px;
 }
+
