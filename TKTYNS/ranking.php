@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/ranking.css">
-    <title>Document</title>
-</head>
-<body>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
 
@@ -26,15 +17,21 @@
                 }
             }
         echo '</select>',"\n";
-        echo '<input type="submit" class="glass" value="🔎">';
+        echo '<input type="submit" value="🔎">';
     echo '</form>';
-    $sql=$pdo->prepare('select * 
+    if(!empty($_POST['sport'])){
+        $sql=$pdo->prepare('select * 
                         from Shohin inner join Stock on Shohin.shohin_number = Stock.shohin_number inner join Detail on Stock.shohin_number = Detail.shohin_number
                         where Detail.shohin_sport=?
                         order by konyu_kazu desc limit 5');
-    $sql->execute([$_POST['sport']]);
+        $sql->execute([$_POST['sport']]);
+    }else{
+        $sql=$pdo->query('select * 
+                        from Shohin inner join Stock on Shohin.shohin_number = Stock.shohin_number inner join Detail on Stock.shohin_number = Detail.shohin_number
+                        order by konyu_kazu desc limit 5');
+    }
     echo '<table>',"\n";
-    echo  '<tr><th>順位</th><th>商品名</th><th>価格</th></tr>',"\n";
+    echo '<tr><th>順位</th><th>商品名</th><th>価格</th></tr>',"\n";
     $num=1;
     foreach($sql as $row){
         echo '<tr>';
@@ -42,15 +39,11 @@
         echo '<td>';
         echo '<a href="detail.php?id=',$row['shohin_number'],'">','<img src="image/',$row['shohin_gazo'],'" alt="商品画像" width="100" height="100">','</a>';
         echo '</td>';
-        echo '<td>',$row['shohin_price'],'円','</td>';
+        echo '<td>',$row['shohin_price'],'</td>';
         echo '</tr>';
         $num++;
     }
     echo '</table>';
-
 ?>
-<form action = "product.php" methods = "post">
-    <input type = "submit" class="back" value = "検索画面に戻る">
+
 <?php require 'footer.php'; ?>
-</body>
-</html>
