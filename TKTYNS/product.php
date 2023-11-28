@@ -284,6 +284,7 @@ if(!empty($_POST['keyword'])){
     }
 }
 echo '検索結果：全',$sql -> rowCount(),'件';
+<<<<<<< Updated upstream
 echo '<div class = "sports">';
 foreach($sql as $row){
     $id=$row['shohin_number'];
@@ -291,6 +292,15 @@ foreach($sql as $row){
 
 }
 echo '</div>';
+=======
+echo '<div class="sports">';
+foreach($sql as $row){
+    echo '<a href="detail.php?id=',$id,'">','<img src="image/',$row['shohin_gazo'],'" alt="商品画像" width="100" height="100">','</a>';
+    
+}
+echo '</div>';
+
+>>>>>>> Stashed changes
 
 ?>
 </div>
