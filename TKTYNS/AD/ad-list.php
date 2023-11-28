@@ -30,7 +30,7 @@ foreach ($pdo->query('SELECT * FROM Shohin') as $row) {
     echo '<td>', $row['shohin_price'], '</td>';
     echo '<td>', $row['shohin_gazo'], '</td>';
     echo '<td>';
-    echo '<a href="ad-list-output.php?id=', $row['shohin_number'], '">削除</a>';
+    echo '<a href="ad-Deletion Completed.php?id=', $row['shohin_number'], '">削除</a>';
     echo '<a href="ad-update.php?id=', $row['shohin_number'], '">更新</a>';
     echo '</td>';
     echo '</tr>';
