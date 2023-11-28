@@ -17,35 +17,17 @@ form {
 }
 
 /* customer-insert-output.css */
+p {
+    background-color: rgb(222, 222, 222);
+    font-size: 50px;
+    border: 5px solid;
+    position: absolute;
+    top: 200px;
+    right: 10px; /* 10px は仮の値。実際のデザインに合わせて調整してください。 */
+    max-width: 800px; /* テキストの最大幅を指定 */
+}
 
-.price{
-    background-color: rgb(222, 222, 222);
-    font-size: 50px;
-    border: 5px solid;
-    position: absolute;
-    top:50px; left: 550px;
-}
-.product-name{
-    background-color: rgb(222, 222, 222);
-    font-size: 50px;
-    border: 5px solid;
-    position: absolute;
-    top:125px; left: 550px;
-}
-.product-description{
-    background-color: rgb(222, 222, 222);
-    font-size: 50px;
-    border: 5px solid;
-    position: absolute;
-    top:200px; right: 10px;
-}
-.stock{
-    background-color: rgb(222, 222, 222);
-    font-size: 50px;
-    border: 5px solid;
-    position: absolute;
-    top:280px; left: 550px;
-}
+
 
 .cart {
     background-color: #a9a9a95d;

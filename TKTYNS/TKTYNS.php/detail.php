@@ -19,10 +19,10 @@ foreach($sql as $row){
     //商品の表示
     echo '<img src="image/',$row['shohin_gazo'],'" alt="商品画像" width="100" height="100">';
     echo '<form action="cart-insert.php" method="post">';
-    echo '<p class="price">価格:', $row['shohin_price'], '</p>';
-    echo '<p class="product-name">商品名:', $row['shohin_mei'], '</p>';
-    echo '<p class="product-description">商品説明:', $row['shohin_setu'], '</p>';
-    echo '<p class="stock">在庫数:', $row['stock_kazu'], '</p>';    
+    echo '<p>価格:', $row['shohin_price'], '</p>';
+    echo '<p>商品名:', $row['shohin_mei'], '</p>';
+    echo '<p>商品説明:', $row['shohin_setu'], '</p>';
+    echo '<p>在庫数:', $row['stock_kazu'], '</p>';    
     echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
     echo '<input type="hidden" name="shohin_mei" value="', $row['shohin_mei'], '">';
     echo '<input type="hidden" name="shohin_price" value="', $row['shohin_price'], '">';
