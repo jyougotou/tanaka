@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
 <!DOCTYPE html>
@@ -51,7 +50,6 @@
         }
     echo '</select>',"\n";
     echo '<select name="price">',"\n";
-        if($_POST[''])
         echo '<option hidden value="">価格帯</option>';
         echo '<option value="">選択しない</option>';
         if(1==$_POST['price']){
@@ -100,13 +98,9 @@
 ?>
 </form>
 <!--ログイン画面に遷移する-->
-<?php
-    if(empty($_SESSION['Member'])){
-        echo '<form action="login.php" method="post">';
-                echo '<input type="submit" value="ログイン">';
-        echo '</form>';
-    }
-?>
+<form action="login-input.php" method="post">
+    <input type="submit" value="ログイン">
+</form>
 <!--会員情報更新画面に遷移する-->
 <form action="customer-update-input.php" method="post">
     <input type="submit" value="ユーザー情報の更新">
@@ -120,17 +114,15 @@
     <input type="submit" value="ランキング">
 </form>
 <!--ログアウト画面に遷移する-->
-<?php
-    if(!empty($_SESSION['Member'])){
-        echo '<form action = "logout-input.php" method = "post">';
-            echo '<input type = "submit" value = "ログアウト">';
-        echo '</form>';
-    }
-?>
+<form action = "logout-input.php" method = "post">
+    <input type = "submit" value = "ログアウト">
+</form>
+
 <hr>
 
 <?php
-
+echo '<table>',"\n";
+echo '<tr><th>商品番号</th><th>商品名</th><th>価格</th></tr>',"\n";
 if(!empty($_POST['keyword'])){
     if(!empty($_POST['sport'])){
         if(!empty($_POST['burnd'])){
