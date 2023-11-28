@@ -84,7 +84,7 @@ form {
     background-color: yellow;
     box-sizing: border-box;
     border: 5px solid #000;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -150,6 +150,7 @@ form {
     right: 20px; /* 右側に配置 */
   }
   .searchBox {
+<<<<<<< HEAD
     width: 500px;
     height: 40px;
     font-size: 16px;
@@ -169,3 +170,17 @@ form {
     top: 20px; /* 下部に配置 */
     right: 300px; /* 右側に配置 */
   }
+=======
+    width: 400px;
+    height: 20px;
+    font-size: 12px;
+    padding: 10px; /* 内側の余白を追加 */
+  }
+  .sports{
+    float:right;
+  }
+  .sports img{
+    margin: 10px;
+  }
+  
+>>>>>>> cc1b862677d23c617e90e06706ff42d1b3f8a21a
