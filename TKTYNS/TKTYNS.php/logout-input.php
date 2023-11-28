@@ -19,10 +19,4 @@
     <?php require 'footer.php'; ?> 
 </body>
 </html>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> d6631cb854ab352f60bca56715af9e0198929d5d
-=======
->>>>>>> d6631cb854ab352f60bca56715af9e0198929d5d
