@@ -18,7 +18,6 @@
             <th>商品名</th>
             <th>商品説明</th>
             <th>価格</th>
-            <th>商品画像</th>
         </tr>
 <?php
 $pdo = new PDO($connect, USER, PASS);
@@ -28,7 +27,6 @@ foreach ($pdo->query('SELECT * FROM Shohin') as $row) {
     echo '<td>', $row['shohin_mei'], '</td>';
     echo '<td>', $row['shohin_setu'], '</td>';
     echo '<td>', $row['shohin_price'], '</td>';
-    echo '<td>', $row['shohin_gazo'], '</td>';
     echo '<td>';
     echo '<a href="ad-Deletion Completed.php?id=', $row['shohin_number'], '">削除</a>';
     echo '<a href="ad-update.php?id=', $row['shohin_number'], '">更新</a>';
