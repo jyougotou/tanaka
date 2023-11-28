@@ -51,7 +51,7 @@
             }
         }
     echo '</select>',"\n";
-    echo '<select name="price" class = "select-pr" >',"\n";
+    echo '<select name="price" class = "select-pr">',"\n";
         echo '<option hidden value="">価格帯</option>';
         echo '<option value="">選択しない</option>';
 
@@ -126,7 +126,8 @@
 <hr>
 
 <?php
-
+echo '<table>',"\n";
+echo '<tr><th>商品番号</th><th>商品名</th><th>価格</th></tr>',"\n";
 if(!empty($_POST['keyword'])){
     if(!empty($_POST['sport'])){
         if(!empty($_POST['burnd'])){
@@ -284,12 +285,17 @@ if(!empty($_POST['keyword'])){
     }
 }
 echo '検索結果：全',$sql -> rowCount(),'件';
-echo '<div class="sports">';
 foreach($sql as $row){
+    $id=$row['shohin_number'];
+    echo '<tr>';
+    echo '<td>',$id,'</td>';
+    echo '<td>';
     echo '<a href="detail.php?id=',$id,'">','<img src="image/',$row['shohin_gazo'],'" alt="商品画像" width="100" height="100">','</a>';
-    
+    echo '</td>';
+    echo '<td>',$row['shohin_price'],'</td>';
+    echo '</tr>';
 }
-echo '</div>'
+echo '</table>';
 
 ?>
 </div>
