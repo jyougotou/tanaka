@@ -1,15 +1,22 @@
 <?php session_start(); ?>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
-
-<!--商品画面に遷移する-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--商品画面に遷移する-->
 <form action="product.php" method="post">
-    <input type="text" name="keyword" placeholder="キーワードを検索" value="<?php echo $_POST['keyword']; ?>">
+    <input type="text" name="keyword" placeholder="キーワードを検索" class = "searchBox" value="<?php echo $_POST['keyword']; ?>">
 <?php
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->query('select distinct shohin_sport from Detail');
-    echo '<select name="sport">',"\n";
-        echo '<option hidden value="">スポーツ</option>';
+    echo '<select name="sport" >',"\n";
+        echo '<option hidden  value="">スポーツ</option>';
         echo '<option value="">選択しない</option>';
         foreach($sql as $row){
             if($row['shohin_sport']==$_POST['sport']){
@@ -95,7 +102,7 @@
 <!--ログイン画面に遷移する-->
 <?php
     if(empty($_SESSION['Member'])){
-        echo '<form action="login-input.php" method="post">';
+        echo '<form action="login.php" method="post">';
                 echo '<input type="submit" value="ログイン">';
         echo '</form>';
     }
@@ -281,14 +288,18 @@ if(!empty($_POST['keyword'])){
     }
 }
 echo '検索結果：全',$sql -> rowCount(),'件';
-echo '<div class="sports">';
+echo '<div class = "sports">';
 foreach($sql as $row){
     $id=$row['shohin_number'];
-    
-        echo '<a href="detail.php?id=',$id,'">','<img src="image/',$row['shohin_gazo'],'" alt="商品画像" width="100" height="100">','</a>';
-        
-    }
-    echo '</div>';
+    echo '<a href="detail.php?id=',$id,'">','<img src="image/',$row['shohin_gazo'],'" alt="商品画像" width="100" height="100">','</a>';
+
+}
+echo '</div>';
 
 ?>
+</body>
+</html>
+
+
+
 <?php require 'footer.php'; ?>
