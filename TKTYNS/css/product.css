@@ -79,9 +79,9 @@ form {
     left: 10px; /* 左側に配置 */
   }
   .ranking {
-    width: 100px;
-    height: 30px;
-    background-color: yellow;
+    width: 200px;
+    height: 60px;
+    background-color: rgb(255, 238, 0);
     box-sizing: border-box;
     border: 5px solid #000;
     font-size: 10px;
@@ -150,7 +150,7 @@ form {
     right: 20px; /* 右側に配置 */
   }
   .searchBox {
-    width: 500px;
+    width: 400px;
     height: 40px;
     font-size: 16px;
     padding: 10px; /* 内側の余白を追加 */
@@ -158,7 +158,7 @@ form {
   .ken {
     width: 100px;
     height: 50px;
-    background-color: greenyellow;
+    
    
     font-size: 16px;
     font-weight: bold;
