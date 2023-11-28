@@ -51,7 +51,7 @@
             }
         }
     echo '</select>',"\n";
-    echo '<select name="price" class = "select-pr">',"\n";
+    echo '<select name="price" class = "select-pr" >',"\n";
         echo '<option hidden value="">価格帯</option>';
         echo '<option value="">選択しない</option>';
 

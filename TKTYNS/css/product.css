@@ -1,0 +1,171 @@
+body {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-image: url(../image/背景.jpg);
+  border-radius: 5px;
+  font-size: 20px; /* 全体のフォントサイズを大きく */
+}
+form {
+    display: flex;
+    flex-direction: row; /* 横並びにする */
+    gap: 10px;
+    align-items: center; /* 垂直方向の中央揃え */
+    margin-bottom: 10px; /* フォーム間の余白 */
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* CSS for select boxes */
+  .select-btn {
+    width: 200px;
+    height: 60px;
+    background-color: rgba(255, 171, 102, 0.66);
+    border: 5px solid #000;
+   
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* 下部に配置 */
+    left: 10px; /* 左側に配置 */
+  }
+  .select-br {
+    width: 200px;
+    height: 60px;
+    background-color: rgba(255, 171, 102, 0.66);
+    border: 5px solid #000;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 100px; /* 下部に配置 */
+    left: 10px; /* 左側に配置 */
+  }
+  .select-bs {
+    width: 200px;
+    height: 60px;
+    background-color: rgba(255, 171, 102, 0.66);
+    border: 5px solid #000;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 190px; /* 下部に配置 */
+    left: 10px; /* 左側に配置 */
+  }
+  .select-pr {
+    width: 200px;
+    height: 60px;
+    background-color: rgba(255, 171, 102, 0.66);
+    border: 5px solid #000;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 280px; /* 下部に配置 */
+    left: 10px; /* 左側に配置 */
+  }
+  .ranking {
+    width: 200px;
+    height: 60px;
+    background-color: rgb(255, 238, 0);
+    box-sizing: border-box;
+    border: 5px solid #000;
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 370px; /* 下部に配置 */
+    left: 10px; /* 左側に配置 */
+  }
+  .log {
+    width: 150px;
+    height: 50px;
+    background-color: red;
+   
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px; /* 下部に配置 */
+    left: 10px; /* 右側に配置 */
+  }
+  .login {
+    width: 100px;
+    height: 50px;
+    background-color: greenyellow;
+   
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* 下部に配置 */
+    right: 230px; /* 右側に配置 */
+  }
+  .yuza {
+    width: 100px;
+    height: 50px;
+    background-color: greenyellow;
+   
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* 下部に配置 */
+    right: 100px; /* 右側に配置 */
+  }
+  .cart {
+    width: 50px;
+    height: 50px;
+    background-color: floralwhite;
+   
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* 下部に配置 */
+    right: 20px; /* 右側に配置 */
+  }
+  .searchBox {
+    width: 400px;
+    height: 40px;
+    font-size: 16px;
+    padding: 10px; /* 内側の余白を追加 */
+  }
+  .ken {
+    width: 100px;
+    height: 50px;
+    
+   
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* 下部に配置 */
+    right: 300px; /* 右側に配置 */
+  }
