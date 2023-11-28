@@ -26,22 +26,7 @@ foreach($sql as $row){
     echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
     echo '<input type="hidden" name="shohin_mei" value="', $row['shohin_mei'], '">';
     echo '<input type="hidden" name="shohin_price" value="', $row['shohin_price'], '">';
-<<<<<<< HEAD
-<<<<<<<< HEAD:TKTYNS/detail.php
-<<<<<<< HEAD
-    echo '<input type="hidden" name="count" value="1">';
-    if(!empty($_SESSION['Member']) and $row['stoc']){
-        echo '<input type="submit" value="カートに入れる🛒">';
-    }
-=======
     echo '<p><input type="submit" class="cart" value="カートに入れる🛒">';
->>>>>>> d6631cb854ab352f60bca56715af9e0198929d5d
-========
-    echo '<p><input type="submit" class="cart" value="カートに入れる🛒">';
->>>>>>>> d6631cb854ab352f60bca56715af9e0198929d5d:TKTYNS/TKTYNS.php/detail.php
-=======
-    echo '<p><input type="submit" class="cart" value="カートに入れる🛒">';
->>>>>>> d6631cb854ab352f60bca56715af9e0198929d5d
     echo '</form>';
     echo '<form action = "product.php" method = "post">';
     echo '<input type = "submit" class="back" value = "戻る">';

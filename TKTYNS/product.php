@@ -1,15 +1,23 @@
-<?php session_start(); ?>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
-
-<!--商品画面に遷移する-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/product.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="form-container">
+    <!--商品画面に遷移する-->
 <form action="product.php" method="post">
-    <input type="text" name="keyword" placeholder="キーワードを検索" value="<?php echo $_POST['keyword']; ?>">
+<input type="text" name="keyword" placeholder="キーワードを検索" class = "searchBox" value="<?php echo isset($_POST['keyword']) ? $_POST['keyword'] : ''; ?>">
 <?php
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->query('select distinct shohin_sport from Detail');
-    echo '<select name="sport">',"\n";
-        echo '<option hidden value="">スポーツ</option>';
+    echo '<select name="sport" class = "select-btn">',"\n";
+        echo '<option hidden value="" >スポーツ</option>';
         echo '<option value="">選択しない</option>';
         foreach($sql as $row){
             if($row['shohin_sport']==$_POST['sport']){
@@ -20,7 +28,7 @@
         }
     echo '</select>',"\n";
     $sql=$pdo->query('select distinct shohin_burnd from Detail');
-    echo '<select name="burnd">',"\n";
+    echo '<select name="burnd" class = "select-br">',"\n";
         echo '<option hidden value="">ブランド</option>';
         echo '<option value="">選択しない</option>';
         foreach($sql as $row){
@@ -32,7 +40,7 @@
         }
     echo '</select>',"\n";
     $sql=$pdo->query('select distinct shohin_kate from Detail');
-    echo '<select name="category">',"\n";
+    echo '<select name="category" class = "select-bs">',"\n";
         echo '<option hidden value="">カテゴリ</option>';
         echo '<option value="">選択しない</option>';
         foreach($sql as $row){
@@ -43,30 +51,32 @@
             }
         }
     echo '</select>',"\n";
-    echo '<select name="price">',"\n";
-        if($_POST[''])
+    echo '<select name="price" class = "select-pr">',"\n";
         echo '<option hidden value="">価格帯</option>';
         echo '<option value="">選択しない</option>';
-        if(1==$_POST['price']){
-            echo '<option value="1" selected>～1000円</option>',"\n";
-        }else{
-            echo '<option value="1">～1000円</option>',"\n";
-        }
-        if(2==$_POST['price']){
-            echo '<option value="2" selected>1000円～3000円</option>',"\n";
-        }else{
-            echo '<option value="2">1000円～3000円</option>',"\n";
-        }
-        if(3==$_POST['price']){
-            echo '<option value="3" selected>3000円～9000円</option>',"\n";
-        }else{
-            echo '<option value="3">3000円～9000円</option>',"\n";
-        }
-        if(4==$_POST['price']){
-            echo '<option value="4" selected>9000円～30000円</option>',"\n";
-        }else{
-            echo '<option value="4">9000円～30000円</option>',"\n";
-        }
+
+            if (1 == $_POST['price']) {
+                echo '<option value="1" selected>～1000円</option>',"\n";
+            } else {
+                echo '<option value="1">～1000円</option>',"\n";
+            }
+            if(2==$_POST['price']){
+                echo '<option value="2" selected>1000円～3000円</option>',"\n";
+            }else{
+                echo '<option value="2">1000円～3000円</option>',"\n";
+            }
+            if(3==$_POST['price']){
+                echo '<option value="3" selected>3000円～9000円</option>',"\n";
+            }else{
+                echo '<option value="3">3000円～9000円</option>',"\n";
+            }
+            if(4==$_POST['price']){
+                echo '<option value="4" selected>9000円～30000円</option>',"\n";
+            }else{
+                echo '<option value="4">9000円～30000円</option>',"\n";
+            }
+            
+        
     echo '</select>',"\n";
     switch($_POST['price']){
         case 1:
@@ -89,42 +99,34 @@
             $price_1 = 0;
             $price_2 = 0;
     }
-    echo '<input type="submit" value="🔎">';
+    echo '<input type="submit" class = "ken" value="🔎">';
 ?>
 </form>
 <!--ログイン画面に遷移する-->
-<?php
-    if(empty($_SESSION['Member'])){
-        echo '<form action="login-input.php" method="post">';
-                echo '<input type="submit" value="ログイン">';
-        echo '</form>';
-    }
-?>
+<form action="login-input.php" method="post">
+    <input type="submit" class = "login" value="ログイン">
+</form>
 <!--会員情報更新画面に遷移する-->
 <form action="customer-update-input.php" method="post">
-    <input type="submit" value="ユーザー情報の更新">
+    <input type="submit" class = "yuza" value="ユーザー情報の更新">
 </form>
 <!--カート画面に遷移する-->
 <form action="cart.php" method="post">
-    <input type="submit" value="🛒">
+    <input type="submit" class = "cart" value="🛒">
 </form>
 <!--ランキング画面に遷移する-->
 <form action="ranking.php" method="post">
-    <input type="submit" value="ランキング">
+    <input type="submit" class = "ranking" value="ランキング">
 </form>
 <!--ログアウト画面に遷移する-->
-<?php
-    if(!empty($_SESSION['Member'])){
-        echo '<form action = "logout-input.php" method = "post">';
-            echo '<input type = "submit" value = "ログアウト">';
-        echo '</form>';
-    }
-?>
+<form action = "logout-input.php" method = "post">
+    <input type = "submit" class = "log" value = "ログアウト">
+</form>
+
 <hr>
 
 <?php
-echo '<table>',"\n";
-echo '<tr><th>商品番号</th><th>商品名</th><th>価格</th></tr>',"\n";
+
 if(!empty($_POST['keyword'])){
     if(!empty($_POST['sport'])){
         if(!empty($_POST['burnd'])){
@@ -282,16 +284,27 @@ if(!empty($_POST['keyword'])){
     }
 }
 echo '検索結果：全',$sql -> rowCount(),'件';
+<<<<<<< Updated upstream
+echo '<div class = "sports">';
 foreach($sql as $row){
     $id=$row['shohin_number'];
-    echo '<tr>';
-    echo '<td>',$id,'</td>';
-    echo '<td>';
     echo '<a href="detail.php?id=',$id,'">','<img src="image/',$row['shohin_gazo'],'" alt="商品画像" width="100" height="100">','</a>';
-    echo '</td>';
-    echo '<td>',$row['shohin_price'],'</td>';
-    echo '</tr>';
+
 }
-echo '</table>';
+echo '</div>';
+=======
+echo '<div class="sports">';
+foreach($sql as $row){
+    echo '<a href="detail.php?id=',$id,'">','<img src="image/',$row['shohin_gazo'],'" alt="商品画像" width="100" height="100">','</a>';
+    
+}
+echo '</div>';
+
+>>>>>>> Stashed changes
+
 ?>
+</div>
+</body>
+</html>
+
 <?php require 'footer.php'; ?>

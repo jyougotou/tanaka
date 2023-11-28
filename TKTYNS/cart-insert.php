@@ -1,18 +1,21 @@
 <?php session_start(); ?>
 <?php require 'header.php'; ?>
-<?php require 'db-connect.php'; ?>
 <?php
-    if(!empty($_POST['shohin_number']) and !empty($_SESSION['Member']['member_number'])){
-        $pdo=new PDO($connect,USER,PASS);
-        $sql=$pdo->prepare('select * from Cart where shohin_number=? and member_number=?');
-        $sql->execute([$_POST['shohin_number'],$_SESSION['Member']['member_number']]);
-        if(empty($sql->fetchAll())){
-            $sql=$pdo->prepare('insert into Cart values (?,?,1)');
-            $sql->execute([$_POST['shohin_number'],$_SESSION['Member']['member_number']]);
-        }else{
-            $sql=$pdo->prepare('update Cart set cart_kazu=cart_kazu+1 where shohin_number=? and member_number=?');
-            $sql->execute([$_POST['shohin_number'],$_SESSION['Member']['member_number']]);
-        }
-    }
+$id = $_POST['shohin_number'];
+if(!isset($_SESSION['Detail'])){
+    $_SESSION['Detail'] = [];
+}
+$count = 0;
+if(isset($_SESSION['Detail'][$id])){
+    $count = $_SESSION['Detail'][$id]['count'];
+}
+$_SESSION['Detail'][$id] = [
+    'shohin_number' => $_POST['shohin_number'],
+    'shohin_price' => $_POST['shohin_price'],
+    'count' => $count + $_POST['count']
+];
+echo '<p>カートに商品を追加しました。</p>';
+echo '<hr>';
+require 'cart.php';
 ?>
 <?php require 'footer.php'; ?>
