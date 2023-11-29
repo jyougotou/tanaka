@@ -18,7 +18,7 @@ if(empty($sql->fetchAll())){
                             'member_fon=?, member_pass=? where member_number=?');
         $sql->execute([
             $_POST['member_mei'], $_POST['member_stay'],
-            $_POST['member_fon'], $_POST['member_pass'], $member_number]);
+            $_POST['member_fon'], password_hash($_POST['member_pass'],PASSWORD_DEFAULT), $member_number]);
         $_SESSION['Member']=[
             'member_number'=>$member_number, 'member_mei'=>$_POST['member_mei'],
             'member_stay'=>$_POST['member_stay'],'member_fon'=>$_POST['member_fon'],

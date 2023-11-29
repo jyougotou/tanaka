@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,11 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    <?php session_start(); ?>
         <?php require 'header.php'; ?>
             <?php
             //ログアウト処理の実行
-            unset($_SESSION['customer']);
+            unset($_SESSION['Member']);
                 echo '<h1> ログアウトしました。</h1>';
                 echo '<p> またのご利用お待ちしております。</p>';
                 //ログイン画面に遷移する
