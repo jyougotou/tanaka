@@ -1,7 +1,6 @@
-/* customer-insert-output.css */
+/*吉海作成*/
 
 body {
-
     background-image: url(../image/背景.jpg);
 }
 
@@ -13,39 +12,38 @@ img {
 }
 
 form {
-    text-align: right; /* 右寄せ */
+    text-align: right;
 }
 
-/* customer-insert-output.css */
 
-.price{
+.price, .product-name, .product-description, .stock {
     background-color: rgb(222, 222, 222);
     font-size: 50px;
     border: 5px solid;
+    max-width: 100%;
     position: absolute;
-    top:50px; left: 550px;
 }
-.product-name{
-    background-color: rgb(222, 222, 222);
-    font-size: 50px;
-    border: 5px solid;
-    position: absolute;
-    top:125px; left: 550px;
+
+.price {
+    top: 50px;
+    left: 550px;
 }
-.product-description{
-    background-color: rgb(222, 222, 222);
-    font-size: 50px;
-    border: 5px solid;
-    position: absolute;
-    top:200px; right: 10px;
+
+.product-name {
+    top: 125px;
+    left: 550px;
 }
-.stock{
-    background-color: rgb(222, 222, 222);
-    font-size: 50px;
-    border: 5px solid;
-    position: absolute;
-    top:280px; left: 550px;
+
+.product-description {
+    top: 200px;
+    right: 10px;
 }
+
+.stock {
+    top: 280px;
+    left: 550px;
+}
+
 
 .cart {
     background-color: #a9a9a95d;
