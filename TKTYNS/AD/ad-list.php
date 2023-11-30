@@ -74,6 +74,29 @@ if ($result->num_rows > 0) {
       <tr>
         <td colspan="2"><input type="submit" value="更新"></td>
       </tr>
+        <tr>
+            <th>商品番号</th>
+            <th>商品名</th>
+            <th>商品説明</th>
+            <th>価格</th>
+        </tr>
+<?php
+$pdo = new PDO($connect, USER, PASS);
+foreach ($pdo->query('SELECT * FROM Shohin') as $row) {
+    echo '<tr>';
+    echo '<td>', $row['shohin_number'], '</td>';
+    echo '<td>', $row['shohin_mei'], '</td>';
+    echo '<td>', $row['shohin_setu'], '</td>';
+    echo '<td>', $row['shohin_price'], '</td>';
+    echo '<td>';
+    echo '<a href="ad-Deletion Completed.php?id=', $row['shohin_number'], '">削除</a>';
+    echo '<a href="ad-update.php?id=', $row['shohin_number'], '">更新</a>';
+    echo '</td>';
+    echo '</tr>';
+    echo "\n";
+}
+echo '<a href="ad-registration.php">商品登録</a>';
+?>
     </table>
 
     <?php if (empty($product_name) || empty($stock) || empty($price) || empty($brand_name) || empty($genre)) { ?>
