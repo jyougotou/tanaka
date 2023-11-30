@@ -1,7 +1,6 @@
-/*吉海作成
-/* customer-insert-output.css */
+/*吉海作成*/
 
-body {
+/*body {
     background-image: url(../image/背景.jpg);
 }
 
@@ -13,10 +12,9 @@ img {
 }
 
 form {
-    text-align: right; /* 右寄せ */
+    text-align: right;
 }
 
-/* customer-insert-output.css */
 
 p{
     background-color: rgb(222, 222, 222);
