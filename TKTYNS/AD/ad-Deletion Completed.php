@@ -10,7 +10,7 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		<title>練習6-7-output</title>
+		<title>ad-Deletion Completed</title>
 	</head>
 	<body>
 <?php
