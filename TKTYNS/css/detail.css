@@ -16,13 +16,34 @@ form {
 }
 
 
-p{
-    background-color: rgb(171, 169, 169);
+.price, .product-name, .product-description, .stock {
+    background-color: rgb(222, 222, 222);
     font-size: 50px;
     border: 5px solid;
     max-width: 100%;
     position: absolute;
 }
+
+.price {
+    top: 50px;
+    left: 550px;
+}
+
+.product-name {
+    top: 125px;
+    left: 550px;
+}
+
+.product-description {
+    top: 200px;
+    right: 10px;
+}
+
+.stock {
+    top: 280px;
+    left: 550px;
+}
+
 
 .cart {
     background-color: #a9a9a95d;
