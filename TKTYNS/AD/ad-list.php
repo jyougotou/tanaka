@@ -9,7 +9,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>                                 
+    <title>ASOスポーツ用品サイト(管理者側)</title>                                 
 </head>
 <body>
     <table>
