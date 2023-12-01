@@ -1,9 +1,8 @@
 <?php
-    const SERVER = 'mysql215.phy.lolipop.lan';
-    const DBNAME = 'LAA1516808-shop';
-    const USER = 'LAA1516808';
-    const PASS = 'Pass1007';
-
+    const SERVER = 'mysql218.phy.lolipop.lan';
+    const DBNAME = 'LAA1516810-aso2201157';
+    const USER = 'LAA1516810';
+    const PASS = 'Pass0305';
     $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
 ?>
 
@@ -11,7 +10,7 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		<title>練習6-6-output</title>
+		<title></title>
 	</head>
 	<body>
 <?php
@@ -34,18 +33,25 @@
 ?>
         <hr>
         <table>
-        <tr><th>商品番号</th><th>商品名</th><th>商品価格</th></tr>
+        <tr><th>商品名</th><th>商品説明</th><th>在庫</th><th>値段</th><th>ブランド名</th><th>カテゴリー</th><th>画像</th></tr>
+    </tr>
+    <?php
+     $sql=$pdo->prepare('select * from Shohin where shohin_number=?');
+     $sql->execute([$_GET['id']]);
+     foreach($sql as $row){
+        echo '<tr>';
+        echo '<td><input type = "text" name = "shohin_mei" value = "', $row['shohin_mei'], '"></td>';
+        echo '<td><input type = "text" name = "shohin_setu" value = "', $row['shohin_setu'], '"></td>';
+        echo '<td><input type = "text" name = "shohin_kazu" value = "', $row['shohin_kazu'], '"></td>';
+        echo '<td><input type = "text" name = "shohin_price" value = "', $row['shohin_price'], '"></td>';
+        echo '<td><input type = "text" name = "shohin_burnd" value = "', $row['shohin_burnd'], '"></td>';
+        echo '<td><input type = "text" name = "shohin_kate" value = "', $row['shohin_kate'], '"></td>';
+        echo '<td><input type = "text" name = "shohin_gazo" value = "', $row['shohin_gazo'], '"></td>';
+        echo '</tr>';
+     }
+    ?>
 
-<?php
-foreach ($pdo->query('select * from product') as $row) {
-    echo '<tr>';
-    echo '<td>', $row['id'], '</td>';
-    echo '<td>', $row['name'], '</td>';
-    echo '<td>', $row['price'], '</td>';
-    echo '</tr>';
-    echo "\n";
-}
-?>
+
         </table>
         <button onclick="location.href='ren6-6-input.php'">更新画面へ戻る</button>
     </body>

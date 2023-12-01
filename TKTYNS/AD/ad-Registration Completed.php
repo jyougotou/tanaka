@@ -14,6 +14,7 @@
 </head>
 <body>
     <?php
+    //insertで追加
                     $pdo = new PDO($connect, USER, PASS);
                     $sql = $pdo->prepare('insert into Shohin(shohin_mei, shohin_setu, shohin_price, shohin_gazo) values (?, ?, ?, ?)');
                     $sql->execute([$_POST['shohin_mei'], $_POST['shohin_setu'], $_POST['shohin_price'], $_POST['shohin_gazo']]);
