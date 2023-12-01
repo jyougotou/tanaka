@@ -45,7 +45,7 @@ if(!empty($_SESSION['Member'])){
         echo '</table>';
 
         echo '届け先住所：',$_SESSION['Member']['member_stay'],'<br>';
-        echo '購入者情報：',$_SESSION['Member']['member_mei'],'様　',$_SESSION['Member']['member_fon'],'　',$total,'円';
+        echo '購入者情報：',$_SESSION['Member']['member_mei'],'様 ',$_SESSION['Member']['member_fon'],' ',$total,'円';
 
         echo '<form action = "purchase.php" method = "post">';
             echo '<input type = "submit" value = "購入に進む">';
