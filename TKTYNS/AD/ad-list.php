@@ -10,7 +10,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>Document</title>                                 
+=======
+    <title>ASOスポーツ用品サイト(管理者側)</title>                                 
+>>>>>>> d351ba43fa1d0b76c68cd73bac95b0522436b6c5
 </head>
 <body>
     <table>
