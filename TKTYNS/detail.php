@@ -16,6 +16,14 @@ $sql=$pdo->prepare('select *
                     where Shohin.shohin_number = ?');
 $sql->execute([$_GET['id']]);
 foreach($sql as $row){
+    //在庫なしの処理
+    if($row['stock_kazu'] <= 0) {
+        echo <<<EOF
+            <script>
+                location.href='stock-null.php';
+            </script>
+            EOF;
+    }
     //商品の表示
     echo '<img src="image/',$row['shohin_gazo'],'" alt="商品画像" width="100" height="100">';
     echo '<form action="cart-insert.php" method="post">';
