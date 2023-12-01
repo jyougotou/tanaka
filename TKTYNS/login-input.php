@@ -39,24 +39,30 @@
             $pdo=new PDO($connect, USER, PASS);
             $sql=$pdo->prepare('select * from Member where member_mei=?');
             $sql->execute([$_POST['member_mei']]);
-            foreach($sql as $row){
-                if(password_verify($_POST['member_pass'],$row['member_pass']) == true){
-                    $_SESSION['Member']=[
-                        'member_number'=>$row['member_number'],
-                        'member_mei'=>$row['member_mei'],
-                        'member_stay'=>$row['member_stay'],
-                        'member_fon'=>$row['member_fon'],
-                        'member_pass'=>$_POST['member_pass']
-                    ];
-                    
-                    echo <<<EOF
-                    <script>
-                        location.href='product.php';
-                    </script>
-                    EOF;
-
-                }else{
-                    echo '<p>ログイン名またはパスワードが違います。</p>';
+            if(empty($sql->fetchAll())){
+                echo '<p>存在しないログイン名です。</p>';
+            }else{
+                $sql=$pdo->prepare('select * from Member where member_mei=?');
+                $sql->execute([$_POST['member_mei']]);
+                foreach($sql as $row){
+                    if(password_verify($_POST['member_pass'],$row['member_pass']) == true){
+                        $_SESSION['Member']=[
+                            'member_number'=>$row['member_number'],
+                            'member_mei'=>$row['member_mei'],
+                            'member_stay'=>$row['member_stay'],
+                            'member_fon'=>$row['member_fon'],
+                            'member_pass'=>$_POST['member_pass']
+                        ];
+                        
+                        echo <<<EOF
+                        <script>
+                            location.href='product.php';
+                        </script>
+                        EOF;
+    
+                    }else{
+                        echo '<p>ログイン名またはパスワードが違います。</p>';
+                    }
                 }
             }
         }
