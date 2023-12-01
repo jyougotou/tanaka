@@ -1,6 +1,15 @@
 <?php session_start(); ?>
 <?php require 'db-connect.php'; ?>
 <?php require 'header.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cart-insert.css">
+    <title>Document</title>
+</head>
+<body>
 <?php
     echo '<h1>購入情報</h1>';
     if(!empty($_POST['shohin_number']) and !empty($_SESSION['Member']['member_number'])){
@@ -32,7 +41,11 @@
                 echo '数量を増やしました';
             }
         }
+        echo '<p>数量を増やしました</p>';
     }
     require 'cart.php';
 ?>
+</body>
+</html>
+
 <?php require 'footer.php'; ?>
