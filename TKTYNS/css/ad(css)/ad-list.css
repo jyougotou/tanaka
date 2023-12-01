@@ -3,23 +3,19 @@ html{
     height: 100%;
   }
   body {
-    background-color: rgb(99, 140, 210);
+    height: 100%;
+    background-color: rgb(208, 223, 250);
     margin: 0;
   }
-  
-  .input-field {
-    background-color: rgb(172, 172, 172);
-    width: 350px;
-    margin: 0 auto;
-  }
-  
-  .login-container{
+
+  .list_field{
     text-align: center;
-    margin:  0 auto;
-    width: 1000px;
   }
+
   
-  input{
+  .re{
+    width: 100px;
+    height: 50px;
     position: relative;
-    bottom: 2.5px;
+    left: 400px;
   }

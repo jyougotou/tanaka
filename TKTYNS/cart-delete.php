@@ -1,10 +1,14 @@
-<?php session_start(); 
-      require 'header.php';
-      require 'menu.php'; ?>
+<?php session_start(); ?>
+<?php require 'db-connect.php'; ?>
+<?php require 'header.php'; ?>
 <?php
-unset($_SESSION['product'][$_GET['id']]);
-echo 'カートから商品を削除しました。';
-echo '<hr>';
-require 'cart.php';
+    echo '<h1>購入情報</h1>';
+    if(!empty($_POST['shohin_number']) and !empty($_SESSION['Member']['member_number'])){
+        $pdo=new PDO($connect,USER,PASS);
+        $sql=$pdo->prepare('delete from Cart where shohin_number=? and member_number=?');
+        $sql->execute([$_POST['shohin_number'],$_SESSION['Member']['member_number']]);
+        echo '商品をカートから削除しました<br>';
+    }
+    require 'cart.php';
 ?>
 <?php require 'footer.php'; ?>

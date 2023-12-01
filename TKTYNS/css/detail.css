@@ -11,63 +11,65 @@ img {
     top:20px; left: 20px;
 }
 
-form {
-    text-align: right;
-}
-
-
-.price, .product-name, .product-description, .stock {
-    background-color: rgb(222, 222, 222);
+.price, .product-name, .product-explanation, .stock {
+    background-color: rgb(211, 211, 211);
     font-size: 50px;
+    font-weight: bold;
     border: 5px solid;
-    max-width: 100%;
-    position: absolute;
+    position: fixed;
 }
 
 .price {
-    top: 50px;
-    left: 550px;
+    left: 50%;
+    bottom: 70%;
 }
 
 .product-name {
-    top: 125px;
-    left: 550px;
+    left: 50%;
+    bottom:55%;
 }
 
-.product-description {
-    top: 200px;
-    right: 10px;
+.product-explanation {
+    border: 5px solid;
+    color: black; /* フォントカラーを黒に変更 */
+    margin: 2em 0;
+    font-weight: bold;
+    font-size: 40px;
+    left: 50%;
+    top: 20%;
 }
 
 .stock {
-    top: 280px;
-    left: 550px;
+    left: 50%;
+    bottom: 15%;
 }
 
-
 .cart {
-    background-color: #a9a9a95d;
+    background-color: #969696;
+    border: 5px solid;
     font-weight: bold;
+    cursor: pointer;
     font-size: 50px;
-    position: absolute;
-    top:450px;  right: 30px;
+    position:fixed;
+    right:50px;
+    bottom:5%;
 }
 
 .cart:hover {
-    background-color: #626262;
-    text-align: right;
-    font-weight: bold;
+    background-color: rgba(73, 71, 71, 0.989);
 }
 
 .back {
+    text-align: center;
+    border: 5px solid;
     background-color: #a9a9a9;
     cursor: pointer;
-    position: absolute;
-    right: 650px;
-    top:460px;
     font-size: 40px;
+    position: fixed;
+    left: 45%;
+    bottom:5%;
 }
 
 .back:hover {
-    background-color: #626262;
+    background-color: #727272;
 }
