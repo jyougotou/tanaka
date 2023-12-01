@@ -21,7 +21,7 @@ foreach($sql as $row){
     echo '<form action="cart-insert.php" method="post">';
     echo '<p class="price">価格:',$row['shohin_price'],'</p>';
     echo '<p class="product-name">商品名:',$row['shohin_mei'],'</p>';
-    echo '<p class="product-description">商品説明:',$row['shohin_setu'],'</p>';
+    echo '<p class="product-explanation">商品説明:',$row['shohin_setu'],'</p>';
     echo '<p class="stock">在庫数:',$row['stock_kazu'],'</p>';
     echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
     echo '<input type="hidden" name="shohin_mei" value="', $row['shohin_mei'], '">';

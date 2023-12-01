@@ -1,4 +1,10 @@
+<?php 
+      session_start();
+      require 'db-connect.php';
+      require 'header.php';
+?>
 <?php
+echo '<h1>購入情報</h1>';
 if(!empty($_SESSION['Member'])){
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->prepare('select *
@@ -8,7 +14,7 @@ if(!empty($_SESSION['Member'])){
     if(!empty($sql->fetchAll())){
         echo '<table>';
         echo '<tr><th>商品名</th><th>数量</th>';
-        echo '<th>+</th><th>-</th><th>商品説明</th><th>削除ボタン</th></tr>';
+        echo '<th>商品説明</th></tr>';
         $total = 0;
         //カートに商品の表示
         $sql=$pdo->prepare('select *
@@ -21,25 +27,7 @@ if(!empty($_SESSION['Member'])){
             echo '<tr>';
             echo '<td>', $row['shohin_mei'] , '</td>';
             echo '<td>', $row['cart_kazu'] ,'</td>';
-            echo '<td>';
-                echo '<form action="cart-insert.php" method="post">';
-                    echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
-                    echo '<input type="submit" value="+">';
-                echo '</form>';
-            echo '</td>';
-            echo '<td>';
-                echo '<form action="cart-reduce.php" method="post">';
-                echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
-                echo '<input type="submit" value="-">';
-                echo '</form>';
-            echo '</td>'; 
             echo '<td>', $row['shohin_setu'] , '</td>';
-            echo '<td>';
-                echo '<form action="cart-delete.php" method="post">';
-                    echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
-                    echo '<input type="submit" value="削除">';
-                echo '</form>';
-            echo '</td>'; 
             echo '</tr>';
         }
         echo '</table>';
@@ -47,8 +35,8 @@ if(!empty($_SESSION['Member'])){
         echo '届け先住所：',$_SESSION['Member']['member_stay'],'<br>';
         echo '購入者情報：',$_SESSION['Member']['member_mei'],'様　',$_SESSION['Member']['member_fon'],'　',$total,'円';
 
-        echo '<form action = "purchase.php" method = "post">';
-            echo '<input type = "submit" value = "購入に進む">';
+        echo '<form action = "purchase-complete.php" method = "post">';
+            echo '<input type = "submit" value = "購入">';
         echo '</form>';
     }else{
         //カートに商品がない場合
@@ -62,3 +50,4 @@ echo '<form action = "product.php" method = "post">';
     echo '<input type = "submit" value = "戻る">';
 echo '</form>';
 ?>
+<?php require 'footer.php'; ?>
