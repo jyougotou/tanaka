@@ -9,10 +9,16 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/ad(css)/ad-list.css">
     <title>ASOスポーツ用品サイト(管理者側)</title>                                 
 </head>
 <body>
-    <table>
+    <div class="list_field">
+    <h1>商品一覧画面</h1>
+    <a href="ad-registration.php">
+        <button type="button" class="re">商品登録</button>
+    </a>
+    <table align="center" border="1">
         <tr>
             <th>商品番号</th>
             <th>商品名</th>
@@ -28,14 +34,14 @@ foreach ($pdo->query('SELECT * FROM Shohin') as $row) {
     echo '<td>', $row['shohin_setu'], '</td>';
     echo '<td>', $row['shohin_price'], '</td>';
     echo '<td>';
-    echo '<a href="ad-Deletion Completed.php?id=', $row['shohin_number'], '">削除</a>';
-    echo '<a href="ad-update.php?id=', $row['shohin_number'], '">更新</a>';
+    echo '<div class="delete"><a href="ad-Deletion Completed.php"><button type="button">削除</button></a></div>';
+    echo '<div class="update"><a href="ad-Update.php"><button type="button">更新</button></a></div>';
     echo '</td>';
     echo '</tr>';
     echo "\n";
 }
-echo '<a href="ad-registration.php">商品登録</a>';
 ?>
     </table>
+</div>
 </body>
 </html>
