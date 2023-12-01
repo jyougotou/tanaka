@@ -1,5 +1,6 @@
-<?php require 'header.php'; ?>
+<?php session_start(); ?>
 <?php require 'db-connect.php'; ?>
+<?php require 'header.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -99,15 +100,19 @@
 ?>
 </form>
 <!--ログイン画面に遷移する-->
-<form action="login-input.php" method="post">
-    <input type="submit" class = "login" value="ログイン">
-</form>
+<?php
+    if(empty($_SESSION['Member'])){
+        echo '<form action="login-input.php" method="post">';
+                echo '<input type="submit" class = "login" value="ログイン">';
+        echo '</form>';
+    }
+?>
 <!--会員情報更新画面に遷移する-->
 <form action="customer-update-input.php" method="post">
     <input type="submit" class = "yuza" value="ユーザー情報の更新">
 </form>
 <!--カート画面に遷移する-->
-<form action="cart.php" method="post">
+<form action="cart-show.php" method="post">
     <input type="submit" class = "cart" value="🛒">
 </form>
 <!--ランキング画面に遷移する-->
@@ -115,9 +120,13 @@
     <input type="submit" class = "ranking" value="ランキング">
 </form>
 <!--ログアウト画面に遷移する-->
-<form action = "logout-input.php" method = "post">
-    <input type = "submit" class = "log" value = "ログアウト">
-</form>
+<?php
+    if(!empty($_SESSION['Member'])){
+        echo '<form action="logout-input.php" method="post">';
+                echo '<input type="submit" class = "log" value="ログアウト">';
+        echo '</form>';
+    }
+?>
 
 <hr>
 

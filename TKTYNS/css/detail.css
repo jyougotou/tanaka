@@ -20,22 +20,27 @@ img {
 }
 
 .price {
-    right: 5%;
+    left: 50%;
     bottom: 70%;
 }
 
 .product-name {
-    right: 5%;
+    left: 50%;
     bottom:50%;
 }
 
 .product-explanation {
-    right: 5%;
-    bottom: 30%;
+    border: 3px solid;
+    color: #cecece;
+    margin: 2em 0;
+    font-weight: bold;
+    font-size: 40px; /* フォントサイズを変更 */
+    left: 50%;
+    
 }
 
 .stock {
-    right: 5%;
+    left: 50%;
     bottom: 10%;
 }
 
