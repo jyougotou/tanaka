@@ -17,6 +17,7 @@
     $pdo=new PDO($connect, USER, PASS);
     $sql=$pdo->prepare('delete from Shohin where shohin_number=?');
     $sql->execute([$_GET['id']]);
+    $last = $pdo->lastInsertId();
     echo '削除が完了しました。'; 
 ?>
 <button onclick="location.href='ad-list.php'">商品一覧へ</button>

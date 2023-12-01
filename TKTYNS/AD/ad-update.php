@@ -5,56 +5,62 @@
     const PASS = 'Pass0305';
     $connect = 'mysql:host='. SERVER . ';dbname='. DBNAME . ';charset=utf8';
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		
+		<link rel="stylesheet" href="style.css">
+		<title>練習6-6-input</title>
 	</head>
 	<body>
+    <table>
+        <tr><th>商品名</th><th>商品説明</th><th>在庫</th><th>値段</th><th>ブランド名</th><th>カテゴリー</th><th>画像</th></tr>
+    </tr>
+    <tr>
+        <td><input type = "text" name = "shohin_mei"></td>
+        <td><input type = "text" name = "shohin_setu"></td>
+        <td><input type = "text" name = "stock_kazu"></td>
+        <td><input type = "text" name = "shohin_price"></td>
+        <td><input type = "text" name = "shohin_burand"></td>
+        <td><input type = "text" name = "shohin_kate"></td>
+        <td><input type = "text" name = "shohin_gazo"></td>
+    </tr>
+    </table>
 <?php
     $pdo=new PDO($connect, USER, PASS);
-    $sql=$pdo->prepare('update product set name=?,price=? where id=?');
-    if (empty($_POST['shohin_mei'])) {
-        echo '商品名を入力してください。';
-    } else
-    if (!preg_match('/[0-9]+/', $_POST['shohin_price'])) {
-        echo '商品価格を整数で入力してください。';
-    } else
 
-    if($sql->execute([htmlspecialchars($_POST['name']),$_POST['price'],$_POST['id']])){
-        // var_dump($sql);
-        echo '更新に成功しました。';
-    }else{
-        echo '更新に失敗しました。';
-    }
-    
-?>
-        <hr>
-        <table>
-        <tr>
-            <th>商品番号</th>
-            <th>商品名</th>
-            <th>商品説明</th>
-            <th>価格</th>
-            <th>商品画像</th>
-        </tr>
+	foreach ($pdo->query('select * from Shohin') as $row) {
+	
+		//var_dump($row);
 
-<?php
-foreach ($pdo->query('select * from Shohin') as $row) {
-    echo '<tr>';
-    echo '<tr>';
-    echo '<td>', $row['shohin_number'], '</td>';
-    echo '<td>', $row['shohin_mei'], '</td>';
-    echo '<td>', $row['shohin_setu'], '</td>';
-    echo '<td>', $row['shohin_price'], '</td>';
-    echo '<td>', $row['shohin_gazo'], '</td>';
-    echo '</tr>';
-    echo "\n";
-}
+		echo '<form action="ad-Update Completed.php" method="post">';
+        echo '<input type="hidden" name="shohin_number" value="',$row['shohin_number'],'">';
+        echo '<div class="td0">',$row['shohin_number'],'</div>';
+
+		echo '<div class="td1">';
+        echo '<input type="text" name="shohin_mei" value="',$row['shohin_mei'],'">';
+
+		echo '</div> ';
+		echo '<div class="td1">';
+        echo '<input type="text" name="shohin_setu" value="',$row['shohin_setu'],'">';
+		echo '</div> ';
+
+        
+		echo '</div> ';
+		echo '<div class="td1">';
+        echo '<input type="text" name="shohin_price" value="',$row['shohin_price'],'">';
+		echo '</div> ';
+
+        echo '</div> ';
+		echo '<div class="td1">';
+        echo '<input type="text" name="shohin_gazo" value="',$row['shohin_gazo'],'">';
+		echo '</div> ';
+
+        echo '<div class="td2"><input type="submit" value="更新"></div>';
+		echo '</form>';
+		echo "\n";
+	}
 ?>
-        </table>
-        <button onclick="location.href='ad-update.php'">更新画面へ戻る</button>
+
     </body>
 </html>
