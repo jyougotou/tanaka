@@ -9,7 +9,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>                                 
+    <title>ASOスポーツ用品サイト(管理者側)</title>                                 
 </head>
 <body>
     <table>
@@ -34,7 +34,7 @@ foreach ($pdo->query('SELECT * FROM Shohin') as $row) {
     echo '</tr>';
     echo "\n";
 }
-echo '<a href="ad-Registration.php?id=', $row['shohin_number'], '">商品登録</a>';
+echo '<a href="ad-registration.php">商品登録</a>';
 ?>
     </table>
 </body>
