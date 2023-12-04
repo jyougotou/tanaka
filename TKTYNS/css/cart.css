@@ -34,7 +34,7 @@ form {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .productdelete:hover {
@@ -45,8 +45,8 @@ form {
     background-color: rgb(6, 209, 232);
     position: absolute;
     position: fixed;
-    bottom: 10px;
-    right: 30px;
+    bottom: 40px;
+    right: 40px;
     border: 3px solid black;
     margin-right: 5px;
     padding: 15px 30px; /* サイズを大きく調整 */
@@ -54,7 +54,7 @@ form {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .buy:hover {
@@ -65,8 +65,8 @@ form {
     background-color: #9d9b9b;
     position: absolute;
     position: fixed;
-    bottom: 10px;
-    left: 30px;
+    bottom: 40px;
+    left: 40px;
     border: 3px solid black;
     margin-left: 5px;
     padding: 15px 30px; /* サイズを大きく調整 */
@@ -74,21 +74,81 @@ form {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
 }
+
+.plus {
+    padding: 12px 20px;
+}
+
+.minus {
+    padding: 12px 20px;
+}
+
+/* ヘッダーロウ */
+.header-row {
+    text-align: center;
+    font-size: 20px; /* 適宜調整 */
+}
+
+/* 商品名セル */
+.product-name {
+    text-align: center;
+    font-size: 20px; /* 適宜調整 */
+}
+
+/* 数量セル */
+.quantity {
+    text-align: center;
+    font-size: 20px; /* 適宜調整 */
+}
+
+/* プラスボタンセル */
+.plus-button {
+    text-align: center;
+    font-size: 20px; /* 適宜調整 */
+}
+
+/* マイナスボタンセル */
+.minus-button {
+    text-align: center;
+    font-size: 20px; /* 適宜調整 */
+}
+
+/* 商品説明セル */
+.product-description {
+    text-align: center;
+    font-size: 20px; /* 適宜調整 */
+}
+
+/* 削除ボタンセル */
+.delete-button {
+    text-align: center;
+    font-size: 20px; /* 適宜調整 */
+}
+
 
 .back:hover {
     background-color: #444444;
 }
 
-/* 合計と住所のセクションのスタイル */
+/* 合計と住所のセクションのスタイル */ 
 .total-section {
     margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px; /* 適宜調整 */
+    background-color: rgb(179, 179, 179);
 }
+
+
 
 /* メッセージのスタイル */
 .message {
     margin-top: 20px;
     font-weight: bold;
     color: #ff0000;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 2px black; /* 2px のオフセットで黒縁を付ける */
 }
