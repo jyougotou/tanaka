@@ -3,6 +3,15 @@
       require 'db-connect.php';
       require 'header.php';
 ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/purchase.css">
+    <title>Document</title>
+</head>
+<body>
 <?php
 echo '<h1>購入情報</h1>';
 if(!empty($_SESSION['Member'])){
@@ -36,18 +45,21 @@ if(!empty($_SESSION['Member'])){
         echo '購入者情報：',$_SESSION['Member']['member_mei'],'様 ',$_SESSION['Member']['member_fon'],' ',$total,'円';
 
         echo '<form action = "purchase-complete.php" method = "post">';
-            echo '<input type = "submit" value = "購入">';
+            echo '<input type = "submit" class = "custom-button" value = "購入">';
         echo '</form>';
     }else{
         //カートに商品がない場合
-        echo 'カートに商品がありません';
+        echo '<p>カートに商品がありません</p>';
     }
 }else{
     //ログインしていない場合
-    echo 'ログインしてください。';
+    echo '<p>ログインしてください。</p>';
 }
 echo '<form action = "product.php" method = "post">';
-    echo '<input type = "submit" value = "戻る">';
+    echo '<input type = "submit" class = "back-button" value = "戻る">';
 echo '</form>';
 ?>
+</body>
+</html>
+
 <?php require 'footer.php'; ?>
