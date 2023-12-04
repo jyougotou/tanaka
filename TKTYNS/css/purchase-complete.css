@@ -12,6 +12,10 @@ h1 {
   }
   p {
     color: white; /* ここで色を指定します */
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold; /* 太字にする */
   }
 
   .back-button {
@@ -20,6 +24,6 @@ h1 {
     border: none; /* ボーダーをなくす */
     border-radius: 5px; /* 角丸にする */
     position: absolute;
-    top: 400px; /* 下部に配置 */
-    left:200px; /* 左側に配置 */
+    top: 350px; /* 下部に配置 */
+    left:570px; /* 左側に配置 */
   }

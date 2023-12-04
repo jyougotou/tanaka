@@ -40,7 +40,7 @@
             $sql=$pdo->prepare('select * from Member where member_mei=?');
             $sql->execute([$_POST['member_mei']]);
             if(empty($sql->fetchAll())){
-                echo '<p>存在しないログイン名です。</p>';
+                echo '<p class = "errorlog">存在しないログイン名です。</p>';
             }else{
                 $sql=$pdo->prepare('select * from Member where member_mei=?');
                 $sql->execute([$_POST['member_mei']]);
@@ -61,7 +61,7 @@
                         EOF;
     
                     }else{
-                        echo '<p>ログイン名またはパスワードが違います。</p>';
+                        echo '<p class = "erorr">ログイン名またはパスワードが違います。</p>';
                     }
                 }
             }

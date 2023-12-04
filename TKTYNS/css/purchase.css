@@ -31,3 +31,10 @@ h1 {
     top: 400px; /* 下部に配置 */
     left:200px; /* 左側に配置 */
   }
+  .total-section {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px; /* 適宜調整 */
+    background-color: white;
+}

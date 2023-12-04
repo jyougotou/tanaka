@@ -31,7 +31,7 @@
     if($flg){
         echo '<p>在庫が足りない商品がありました。申し訳ありませんがカート確認画面からやり直してください。</p>';
         echo '<form action = "cart-show.php" method = "post">';
-            echo '<input type = "submit" value = "カート確認画面へ">';
+            echo '<input type = "submit" class = "back-botton" value = "カート確認画面へ">';
         echo '</form>';
     }else{
         //購入処理
@@ -53,7 +53,7 @@
         echo '<p>注文が完了しました。</p>';
         echo '<p>またのご利用をお待ちしております!</p>';
         echo '<form action = "product.php" method = "post">';
-            echo '<input type = "submit" class = "back-botton" value = "商品検索画面へ">';
+            echo '<input type = "submit" class = "back-button" value = "商品検索画面へ">';
         echo '</form>';
     }
     

@@ -1,6 +1,6 @@
 /*吉海作成
 /* ブラウザの一貫性を確保するためのデフォルトスタイルのリセット */
-body, h1, p, form, input {
+body, h1,  form, input {
     margin: 0;
     padding: 0;
 
@@ -82,4 +82,22 @@ form input[type="submit"]:hover {
     position: absolute;
     bottom: 120px;
     left: 15px;
+}
+.erorr {
+    margin: 0;
+    padding: 0;
+    color: red;
+    position: absolute;
+    bottom: 60px;
+    left: 500px
+
+}
+.erorrlog {
+    margin: 0;
+    padding: 0;
+    color: red;
+    position: absolute;
+    bottom: 60px;
+    left: 500px
+
 }

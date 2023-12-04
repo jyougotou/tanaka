@@ -33,7 +33,7 @@ if(!empty($_SESSION['Member'])){
         $total=0;
         foreach( $sql as $row ){
             $total+=$row['shohin_price']*$row['cart_kazu'];
-            echo '<tr>';
+            echo '<tr class = "total-section">';
             echo '<td>', $row['shohin_mei'] , '</td>';
             echo '<td>', $row['cart_kazu'] ,'</td>';
             echo '<td>', $row['shohin_setu'] , '</td>';
@@ -41,8 +41,8 @@ if(!empty($_SESSION['Member'])){
         }
         echo '</table>';
 
-        echo '届け先住所：',$_SESSION['Member']['member_stay'],'<br>';
-        echo '購入者情報：',$_SESSION['Member']['member_mei'],'様 ',$_SESSION['Member']['member_fon'],' ',$total,'円';
+        echo '<p class = "total-section">届け先住所：',$_SESSION['Member']['member_stay'],'</p';
+        echo '<p class = "total-section">購入者情報：',$_SESSION['Member']['member_mei'],'様 ',$_SESSION['Member']['member_fon'],' ',$total,'円</p>';
 
         echo '<form action = "purchase-complete.php" method = "post">';
             echo '<input type = "submit" class = "custom-button" value = "購入">';
