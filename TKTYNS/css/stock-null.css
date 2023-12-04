@@ -1,8 +1,4 @@
-h1 {
-    text-align: center;
-    font-size: 36px; /* タイトルのフォントサイズを大きく */
-  }
-  body {
+body {
     width: 500px;
     margin: 0 auto;
     padding: 20px 0;
@@ -17,8 +13,7 @@ h1 {
     font-size: 30px;
     font-weight: bold; /* 太字にする */
   }
-
-  .back-button {
+  .button {
     background-color: white; /* ボタンの背景色を緑に設定 */
     padding: 10px 20px; /* ボタンの余白を設定 */
     border: none; /* ボーダーをなくす */

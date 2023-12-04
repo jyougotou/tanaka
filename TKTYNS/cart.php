@@ -17,8 +17,9 @@ if(!empty($_SESSION['Member'])){
     $sql->execute([$_SESSION['Member']['member_number']]);
     if(!empty($sql->fetchAll())){
         echo '<table>';
-        echo '<tr><th>商品名</th><th>数量</th>';
-        echo '<th>+</th><th>-</th><th>商品説明</th><th>削除ボタン</th></tr>';
+        echo '<tr class="header-row"><th class="product-name">商品名</th><th class="quantity">数量</th>';
+        echo '<th class="plus-button">+</th><th class="minus-button">-</th><th class="product-description">商品説明</th><th class="delete-button">削除ボタン</th></tr>';
+        
         $total = 0;
         //カートに商品の表示
         $sql=$pdo->prepare('select *
@@ -54,10 +55,10 @@ if(!empty($_SESSION['Member'])){
         }
         echo '</table>';
 
-        echo '<div class="total-section">';
-        echo '届け先住所：',$_SESSION['Member']['member_stay'],'<br>';
-        echo '購入者情報：',$_SESSION['Member']['member_mei'],'様 ',$_SESSION['Member']['member_fon'],' ',$total,'円';
-        echo '</div>';
+echo '<div class="total-section">';
+echo '届け先住所：',$_SESSION['Member']['member_stay'],'<br>';
+echo '購入者情報：',$_SESSION['Member']['member_mei'],'様 ',$_SESSION['Member']['member_fon'],' ',$total,'円';
+echo '</div>';
 
         echo '<form action = "purchase.php" method = "post">';
             echo '<input type = "submit" class="buy" value = "購入に進む">';
