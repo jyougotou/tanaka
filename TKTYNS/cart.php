@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cart.css">
+    <title>Cart</title>
+</head>
+<body>
+
 <?php
 if(!empty($_SESSION['Member'])){
     $pdo=new PDO($connect,USER,PASS);
@@ -24,41 +34,47 @@ if(!empty($_SESSION['Member'])){
             echo '<td>';
                 echo '<form action="cart-insert.php" method="post">';
                     echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
-                    echo '<input type="submit" value="+">';
+                    echo '<input type="submit" class="plus" value="+">';
                 echo '</form>';
             echo '</td>';
             echo '<td>';
                 echo '<form action="cart-reduce.php" method="post">';
                 echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
-                echo '<input type="submit" value="-">';
+                echo '<input type="submit" class="minus" value="-">';
                 echo '</form>';
             echo '</td>'; 
             echo '<td>', $row['shohin_setu'] , '</td>';
             echo '<td>';
                 echo '<form action="cart-delete.php" method="post">';
                     echo '<input type="hidden" name="shohin_number" value="', $row['shohin_number'], '">';
-                    echo '<input type="submit" value="削除">';
+                    echo '<input type="submit" class="productdelete" value="削除">';
                 echo '</form>';
             echo '</td>'; 
             echo '</tr>';
         }
         echo '</table>';
 
+        echo '<div class="total-section">';
         echo '届け先住所：',$_SESSION['Member']['member_stay'],'<br>';
         echo '購入者情報：',$_SESSION['Member']['member_mei'],'様 ',$_SESSION['Member']['member_fon'],' ',$total,'円';
+        echo '</div>';
 
         echo '<form action = "purchase.php" method = "post">';
-            echo '<input type = "submit" value = "購入に進む">';
+            echo '<input type = "submit" class="buy" value = "購入に進む">';
         echo '</form>';
     }else{
         //カートに商品がない場合
-        echo 'カートに商品がありません';
+        echo '<div class="message">カートに商品がありません</div>';
     }
 }else{
     //ログインしていない場合
-    echo 'ログインしてください。';
+    echo '<div class="message">ログインしてください。</div>';
 }
+
 echo '<form action = "product.php" method = "post">';
-    echo '<input type = "submit" value = "戻る">';
+    echo '<input type = "submit" class="back" value = "戻る">';
 echo '</form>';
+
 ?>
+</body>
+</html>

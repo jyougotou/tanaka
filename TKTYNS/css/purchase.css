@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+    font-size: 36px; /* タイトルのフォントサイズを大きく */
+  }
+  body {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-image: url(../image/背景.jpg);
+    border-radius: 5px;
+    font-size: 20px; /* 全体のフォントサイズを大きく */
+  }
+  p {
+    color: white; /* ここで色を指定します */
+  }
+  .custom-button {
+    background-color: yellow; /* ボタンの背景色を緑に設定 */
+    padding: 10px 20px; /* ボタンの余白を設定 */
+    border: none; /* ボーダーをなくす */
+    border-radius: 5px; /* 角丸にする */
+    position: absolute;
+    top: 400px; /* 下部に配置 */
+    left:1000px; /* 左側に配置 */
+  }
+  .back-button {
+    background-color: white; /* ボタンの背景色を緑に設定 */
+    padding: 10px 20px; /* ボタンの余白を設定 */
+    border: none; /* ボーダーをなくす */
+    border-radius: 5px; /* 角丸にする */
+    position: absolute;
+    top: 400px; /* 下部に配置 */
+    left:200px; /* 左側に配置 */
+  }

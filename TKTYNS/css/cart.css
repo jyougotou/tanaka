@@ -1,0 +1,94 @@
+/* テーブルのスタイル */
+table {
+    width: 60%;
+    position: absolute;
+    margin: auto 5;
+    left: 20%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 3px solid black; /* 黒い縁を追加 */
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* フォームボタンのスタイル */
+form {
+    margin-top: 10px;
+}
+
+/* 商品削除ボタンのスタイル */
+.productdelete {
+    background-color: red;
+    padding: 12px 24px; /* 適宜調整 */
+    font-weight: bold;
+    border: 3px solid black; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.productdelete:hover {
+    background-color: rgb(164, 0, 0);
+}
+
+.buy {
+    background-color: rgb(6, 209, 232);
+    position: absolute;
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    border: 3px solid black;
+    margin-right: 5px;
+    padding: 15px 30px; /* サイズを大きく調整 */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buy:hover {
+    background-color: rgb(0, 117, 130);
+}
+
+.back {
+    background-color: #9d9b9b;
+    position: absolute;
+    position: fixed;
+    bottom: 10px;
+    left: 30px;
+    border: 3px solid black;
+    margin-left: 5px;
+    padding: 15px 30px; /* サイズを大きく調整 */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.back:hover {
+    background-color: #444444;
+}
+
+/* 合計と住所のセクションのスタイル */
+.total-section {
+    margin-top: 20px;
+}
+
+/* メッセージのスタイル */
+.message {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ff0000;
+}
