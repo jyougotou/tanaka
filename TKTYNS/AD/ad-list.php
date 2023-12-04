@@ -44,8 +44,6 @@ foreach ($pdo->query('SELECT * FROM Shohin') as $row) {
     echo '</tr>';
     echo "\n";
 }
-
-echo '<a href="ad-Registration.php?id=', $row['shohin_number'], '">商品登録</a>';
 ?>
 </table>
 </div>
