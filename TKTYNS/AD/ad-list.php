@@ -44,6 +44,7 @@ foreach ($pdo->query('SELECT * FROM Shohin') as $row) {
     echo '</tr>';
     echo "\n";
 }
+
 ?>
 </table>
 </div>

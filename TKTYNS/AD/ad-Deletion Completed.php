@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php
     const SERVER = 'mysql218.phy.lolipop.lan';
     const DBNAME = 'LAA1516810-aso2201157';
@@ -15,9 +14,17 @@
 	<body>
 <?php
     $pdo=new PDO($connect, USER, PASS);
+    $shohinNumber = $_GET['id'];
+    //子を先に削除
+    $Detailsql=$pdo->prepare('delete from Detail where shohin_number=?');
+    $Detailsql->execute([$shohinNumber]);
+    //子を先に削除
+    $Stocksql=$pdo->prepare('delete from Stock where shohin_number=?');
+    $Stocksql->execute([$shohinNumber]);
+    //親を削除
     $sql=$pdo->prepare('delete from Shohin where shohin_number=?');
-    $sql->execute([$_GET['id']]);
-    $last = $pdo->lastInsertId();
+    $sql->execute([$shohinNumber]);
+
     echo '削除が完了しました。'; 
 ?>
 <button onclick="location.href='ad-list.php'">商品一覧へ</button>
