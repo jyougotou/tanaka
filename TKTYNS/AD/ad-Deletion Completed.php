@@ -15,9 +15,14 @@
 	<body>
 <?php
     $pdo=new PDO($connect, USER, PASS);
+    $shohinNumber = $_GET['id'];
     $sql=$pdo->prepare('delete from Shohin where shohin_number=?');
-    $sql->execute([$_GET['id']]);
-    $last = $pdo->lastInsertId();
+    $sql->execute([$shohinNumber]);
+    $Detailsql=$pdo->prepare('delete from Detail where shohin_number=?');
+    $Detailsql->execute([$shohinNumber]);
+    $Stocksql=$pdo->prepare('delete from Stock where shohin_number=?');
+    $Stocksql->execute([$shohinNumber]);
+
     echo '削除が完了しました。'; 
 ?>
 <button onclick="location.href='ad-list.php'">商品一覧へ</button>
