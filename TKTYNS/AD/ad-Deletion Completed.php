@@ -9,7 +9,8 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		<title>ad-Deletion Completed</title>
+        <link rel="stylesheet" href="../css/ad(css)/ad-Deletion Completed.css">
+		<title>ASOスポーツ用品サイト(管理者側)</title>
 	</head>
 	<body>
 <?php
@@ -25,7 +26,7 @@
     $sql=$pdo->prepare('delete from Shohin where shohin_number=?');
     $sql->execute([$shohinNumber]);
 
-    echo '削除が完了しました。'; 
+    echo '<h1>削除が完了しました。</h1>'; 
 ?>
 <button onclick="location.href='ad-list.php'">商品一覧へ</button>
 </body>

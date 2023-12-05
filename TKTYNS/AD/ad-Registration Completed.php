@@ -10,7 +10,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>ad-Registration Completed</title>
+    <link rel="stylesheet" href="../css/ad(css)/ad-Registration Completed.css">
+    <title>ASOスポーツ用品サイト(管理者側)</title>
 </head>
 <body>
     <?php

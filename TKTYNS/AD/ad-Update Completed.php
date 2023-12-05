@@ -10,7 +10,8 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+        <link rel="stylesheet" href="../css/ad(css)/ad-Updata Completed.css">
+		<title>ASOスポーツ用品サイト(管理者側)</title>
 	</head>
 	<body>
 <?php
@@ -22,9 +23,9 @@
         if($Stocksql->execute([htmlspecialchars($_POST['konyu_kazu']),$_POST['stock_kazu'],$_GET['id']])){
             if($sql->execute([htmlspecialchars($_POST['shohin_mei']),$_POST['shohin_setu'],$_POST['shohin_price'],$_POST['shohin_gazo'],$_GET['id']])){
         // var_dump($sql);
-                echo '更新に成功しました。';
+                echo '<h1>更新に成功しました。</h1>';
             }else{
-                echo '更新に失敗しました。';
+                echo '<h1>更新に失敗しました。</h1>';
             }
         }
     }

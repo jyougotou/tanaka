@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>ad-registration</title>
+    <link rel="stylesheet" href="../css/ad(css)/ad-registration.css">
+    <title>ASOスポーツ用品サイト(管理者側)</title>
 </head>
 <body>
     <form action = "ad-Registration Completed.php" method = "post">
