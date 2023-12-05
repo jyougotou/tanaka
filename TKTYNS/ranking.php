@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/ranking.css">
-    <title>Document</title>
+    <title>ランキング</title>
 </head>
 <body>
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
 
-<h1>ランキング</h1>
+<h1>ジャンル別人気ランキング</h1>
 
 <?php
     $pdo=new PDO($connect,USER,PASS);
