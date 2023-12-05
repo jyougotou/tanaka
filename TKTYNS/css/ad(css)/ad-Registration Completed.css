@@ -6,4 +6,21 @@ html{
     height: 100%;
     background-color: rgb(208, 223, 250);
     margin: 0;
+    text-align: center;
+  }
+  .to{
+    width: 100px;
+    height: 50px;
+    position: relative;
+    position: absolute;
+    bottom: 400px;
+    left: 30%;
+  }
+  .i{
+    width: 100px;
+    height: 50px;
+    position: relative;
+    position: absolute;
+    bottom: 400px;
+    left: 60%;
   }

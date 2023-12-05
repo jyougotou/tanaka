@@ -7,3 +7,27 @@ html{
     background-color: rgb(208, 223, 250);
     margin: 0;
   }
+  .to{
+    width: 100px;
+    height: 50px;
+    position: relative;
+    position: absolute;
+    bottom: 300px;
+    left: 30%;
+  }
+  .mo{
+    width: 100px;
+    height: 50px;
+    position: relative;
+    position: absolute;
+    bottom: 300px;
+    left: 60%;
+  }
+  .field{
+    width: 600px;
+    margin: auto;
+  }
+  .table{
+    display: flex;
+    flex-wrap: wrap;
+  }

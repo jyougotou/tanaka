@@ -28,6 +28,5 @@
 
     echo '<h1>削除が完了しました。</h1>'; 
 ?>
-<button onclick="location.href='ad-list.php'">商品一覧へ</button>
-</body>
+<button onclick="location.href='ad-list.php'" class="de">商品一覧へ</button>
 </html>

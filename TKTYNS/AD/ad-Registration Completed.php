@@ -49,10 +49,10 @@
         }
     ?>
     <form action="ad-registration.php" method="post">
-        <button type="submit">商品登録へ</button>
+        <input type="submit" value="商品登録へ" class="to">
     </form>
     <form action="ad-list.php" method="post">
-        <button type="submit">商品一覧へ</button>
+        <input type="submit" value="商品一覧へ" class="i">
     </form>
 </body>
 </html>

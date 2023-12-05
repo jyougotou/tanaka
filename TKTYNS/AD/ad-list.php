@@ -10,7 +10,6 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>                                 
     <link rel="stylesheet" href="../css/ad(css)/ad-list.css">
     <title>ASOスポーツ用品サイト(管理者側)</title>                                 
 </head>

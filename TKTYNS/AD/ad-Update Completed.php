@@ -10,7 +10,7 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/ad(css)/ad-Updata Completed.css">
+        <link rel="stylesheet" href="../css/ad(css)/ad-Update Completed.css">
 		<title>ASOスポーツ用品サイト(管理者側)</title>
 	</head>
 	<body>
@@ -30,10 +30,10 @@
         }
     }
     echo '<form action="ad-update.php?id=', $_GET['id'],'" method="post">';
-    echo '<input type="submit" value="更新画面へ"></div>';
+    echo '<input type="submit" value="更新画面へ" class="ko"></div>';
     echo '</form>';
     echo "\n";
 ?>
-        <button onclick="location.href='ad-list.php'">商品一覧へ</button>
+        <button onclick="location.href='ad-list.php'" class="i">商品一覧へ</button>
     </body>
 </html>
