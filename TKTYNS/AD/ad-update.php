@@ -10,7 +10,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="style.css">
-		<title>update</title>
+        <link rel="stylesheet" href="../css/ad(css)/ad-update.css">
+		<title>ASOスポーツ用品サイト(管理者側)</title>
 	</head>
 	<body>
     <table>
