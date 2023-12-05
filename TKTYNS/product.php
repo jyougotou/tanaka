@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/product.css">
-    <title>Document</title>
+    <title>商品検索</title>
 </head>
 <body>
     <!--商品画面に遷移する-->
