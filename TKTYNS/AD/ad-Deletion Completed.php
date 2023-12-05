@@ -25,7 +25,7 @@
     $sql=$pdo->prepare('delete from Shohin where shohin_number=?');
     $sql->execute([$shohinNumber]);
 
-    echo '削除が完了しました。'; 
+    echo '<h1>削除が完了しました。</h1>'; 
 ?>
 <button onclick="location.href='ad-list.php'">商品一覧へ</button>
 </body>
