@@ -13,7 +13,7 @@
             padding: 8px; /* Adjust the padding as needed */
         }
     </style>
-    <title>ログイン画面</title>
+    <title>ログイン</title>
 </head>
 <body>
     <h1>ASOスポーツ用品サイト</h1>

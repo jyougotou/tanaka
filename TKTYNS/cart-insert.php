@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cart-insert.css">
-    <title>Document</title>
+    <title>カート</title>
 </head>
 <body>
 <?php
-    echo '<h1>購入情報</h1>';
+    echo '<h1>カートに入っている商品</h1>';
     if(!empty($_POST['shohin_number']) and !empty($_SESSION['Member']['member_number'])){
         $pdo=new PDO($connect,USER,PASS);
         $sql=$pdo->prepare('select * from Cart where shohin_number=? and member_number=?');

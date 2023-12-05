@@ -10,7 +10,7 @@
 <?php require 'header.php'; ?>
 <?php require 'db-connect.php'; ?>
 
-<h1>ジャンル別人気ランキング</h1>
+<h1>ランキング</h1>
 
 <?php
     $pdo=new PDO($connect,USER,PASS);
