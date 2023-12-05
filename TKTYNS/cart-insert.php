@@ -41,7 +41,6 @@
                 echo '<p>数量を増やしました</p>';
             }
         }
-        echo '<p>数量を増やしました</p>';
     }
     require 'cart.php';
 ?>
