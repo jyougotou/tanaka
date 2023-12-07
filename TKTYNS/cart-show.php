@@ -17,7 +17,5 @@
       echo '<h1>カートに入っている商品</h1>';
       require 'cart.php';
 ?>
-      
-</body>
-</html>
+
 <?php require 'footer.php'; ?>
