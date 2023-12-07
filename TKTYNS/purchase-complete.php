@@ -29,7 +29,7 @@
         }
     }
     if($flg){
-        echo '<p>在庫が足りない商品がありました。申し訳ありませんがカート確認画面からやり直してください。</p>';
+        echo '<p>在庫が足りない商品がありました。申し訳ありませんが、カート確認画面からやり直してください。</p>';
         echo '<form action = "cart-show.php" method = "post">';
             echo '<input type = "submit" class = "back-botton" value = "カート確認画面へ">';
         echo '</form>';
