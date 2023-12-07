@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,31 @@
 <body>
 
 <?php
+//ログインチェック
 if(!empty($_SESSION['Member'])){
     $pdo=new PDO($connect,USER,PASS);
+    //カート数チェック
+    $sql=$pdo->prepare('select *
+                        from Cart inner join Stock on Cart.shohin_number = Stock.shohin_number
+                        where Cart.member_number=?');
+    $sql->execute([$_SESSION['Member']['member_number']]);
+    foreach( $sql as $row ) {
+        if($row['stock_kazu'] < $row['cart_kazu']){
+            if($row['stock_kazu'] === 0){
+                $sql=$pdo->prepare('delete from Cart where shohin_number=? and member_number=?');
+                $sql->execute([$row['shohin_number'],$_SESSION['Member']['member_number']]);
+                echo '<p>商品番号',$row['shohin_number'],'の在庫がなくなったためカートから削除しました</p>';
+            }else{
+                $sql=$pdo->prepare('update Cart set cart_kazu=? where shohin_number=? and member_number=?');
+                $sql->execute([$row['stock_kazu'],$row['shohin_number'],$_SESSION['Member']['member_number']]);
+                echo '<p>商品番号',$row['shohin_number'],'の数が在庫の上限を超えたためカートから減らしました</p>';
+            }
+        }
+    }
+    
+    
+    
+    
     $sql=$pdo->prepare('select *
                         from Shohin inner join Cart on Shohin.shohin_number = Cart.shohin_number
                         where Cart.member_number=?');
