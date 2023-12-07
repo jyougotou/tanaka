@@ -32,9 +32,15 @@
                 $stocknum = $row['stock_kazu'];
             }
             if($cartnum >= $stocknum){
-                $sql=$pdo->prepare('update Cart set cart_kazu=? where shohin_number=? and member_number=?');
-                $sql->execute([$stocknum,$_POST['shohin_number'],$_SESSION['Member']['member_number']]);
-                echo '<p>在庫の上限に達しました</p>';
+                if($row['stock_kazu'] === 0){
+                    $sql=$pdo->prepare('delete from Cart where shohin_number=? and member_number=?');
+                    $sql->execute([$row['shohin_number'],$_SESSION['Member']['member_number']]);
+                    echo '<p>商品番号',$row['shohin_number'],'の在庫がなくなったためカートから削除しました</p>';
+                }else{
+                    $sql=$pdo->prepare('update Cart set cart_kazu=? where shohin_number=? and member_number=?');
+                    $sql->execute([$stocknum,$_POST['shohin_number'],$_SESSION['Member']['member_number']]);
+                    echo '<p>在庫の上限に達しました</p>';
+                }
             }else{
                 $sql=$pdo->prepare('update Cart set cart_kazu=cart_kazu+1 where shohin_number=? and member_number=?');
                 $sql->execute([$_POST['shohin_number'],$_SESSION['Member']['member_number']]);
