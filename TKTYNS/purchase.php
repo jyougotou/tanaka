@@ -42,7 +42,7 @@ if(!empty($_SESSION['Member'])){
         echo '</table>';
 
         echo '<p class = "total-section">届け先住所：',$_SESSION['Member']['member_stay'],'</p>';
-        echo '<p class = "total-section">購入者情報：',$_SESSION['Member']['member_mei'],'様 ',$_SESSION['Member']['member_fon'],' ',$total,'円</p>';
+        echo '<p class = "total-section">購入者情報：',$_SESSION['Member']['member_mei'],'様 ',$_SESSION['Member']['member_fon'],' ','</p><p>合計：',$total,'円</p>';
 
         echo '<form action = "purchase-complete.php" method = "post">';
             echo '<input type = "submit" class = "custom-button" value = "購入">';
