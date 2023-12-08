@@ -1,3 +1,4 @@
+/*吉海作成*/
 /* テーブルのスタイル */
 table {
     width: 60%;
@@ -8,39 +9,39 @@ table {
     background-color: white;
     border: 3px solid black; /* 黒い縁を追加 */
 }
-
+ 
 th, td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
-
+ 
 th {
     background-color: #f2f2f2;
 }
-
+ 
 /* フォームボタンのスタイル */
 form {
     margin-top: 10px;
 }
-
+ 
 /* 商品削除ボタンのスタイル */
 .productdelete {
     background-color: red;
     padding: 12px 24px; /* 適宜調整 */
     font-weight: bold;
-    border: 3px solid black; 
+    border: 3px solid black;
     color: white;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
 }
-
+ 
 .productdelete:hover {
     background-color: rgb(164, 0, 0);
 }
-
+ 
 .buy {
     background-color: rgb(6, 209, 232);
     position: absolute;
@@ -56,11 +57,11 @@ form {
     display: inline-block;
     font-size: 20px;
 }
-
+ 
 .buy:hover {
     background-color: rgb(0, 117, 130);
 }
-
+ 
 .back {
     background-color: #9d9b9b;
     position: absolute;
@@ -76,63 +77,79 @@ form {
     display: inline-block;
     font-size: 20px;
 }
-
+ 
 .plus {
     padding: 12px 20px;
 }
-
+ 
 .minus {
     padding: 12px 20px;
 }
-
+ 
 /* ヘッダーロウ */
 .header-row {
     text-align: center;
     font-size: 20px; /* 適宜調整 */
 }
-
+ 
 /* 商品名セル */
 .product-name {
     text-align: center;
     font-size: 20px; /* 適宜調整 */
 }
-
+ 
 /* 数量セル */
 .quantity {
     text-align: center;
     font-size: 20px; /* 適宜調整 */
 }
-
+ 
 /* プラスボタンセル */
 .plus-button {
     text-align: center;
     font-size: 20px; /* 適宜調整 */
 }
-
+ 
 /* マイナスボタンセル */
 .minus-button {
     text-align: center;
     font-size: 20px; /* 適宜調整 */
 }
-
+ 
 /* 商品説明セル */
 .product-description {
     text-align: center;
     font-size: 20px; /* 適宜調整 */
 }
-
+ 
 /* 削除ボタンセル */
 .delete-button {
     text-align: center;
     font-size: 20px; /* 適宜調整 */
 }
-
-
+ 
 .back:hover {
     background-color: #444444;
 }
-
-/* 合計と住所のセクションのスタイル */ 
+ 
+ 
+.total{
+    background-color: #9d9b9b;
+    position: absolute;
+    position: fixed;
+    top: 70%;
+    right: 24px;
+    border: 3px solid black;
+    margin-right: 15px;
+    margin-bottom: 80px;
+    padding: 15px 15px; /* サイズを大きく調整 */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 5px;
+}
+/* 合計と住所のセクションのスタイル */
 .total-section {
     margin-top: 20px;
     text-align: center;
@@ -140,9 +157,9 @@ form {
     font-size: 18px; /* 適宜調整 */
     background-color: rgb(179, 179, 179);
 }
-
-
-
+ 
+ 
+ 
 /* メッセージのスタイル */
 .message {
     margin-top: 20px;
