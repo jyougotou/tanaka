@@ -161,7 +161,7 @@ form {
     padding: 10px; /* 内側の余白を追加 */
   }
   .sports{
-    float:right;
+    float:left;
   }
   .sports img{
     margin: 10px;

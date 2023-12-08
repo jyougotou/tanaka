@@ -11,36 +11,38 @@ img {
     top:20px; left: 20px;
 }
 
-.price, .product-name, .product-explanation, .stock {
+.price, .product-name,.stock {
     background-color: rgb(211, 211, 211);
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     border: 3px solid;
     position: fixed;
 }
 
 .price {
-    left: 50%;
+    left: 45%;
     bottom: 70%;
 }
 
 .product-name {
-    left: 50%;
+    left: 45%;
     bottom:55%;
 }
 
 .product-explanation {
+    background-color: rgb(211, 211, 211);
     border: 5px solid;
     color: black; /* フォントカラーを黒に変更 */
     margin: 2em 0;
     font-weight: bold;
-    font-size: 40px;
-    left: 50%;
-    top: 30%;
+    font-size: 30px;
+    left: 45%;
+    bottom: 35%;
+    position: fixed;
 }
 
 .stock {
-    left: 50%;
+    left: 45%;
     bottom: 15%;
 }
 
