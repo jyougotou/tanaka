@@ -34,7 +34,7 @@
             echo '<input type = "submit" class = "back-botton" value = "カート確認画面へ">';
         echo '</form>';
     }else{
-        //購入処理
+        //stockテーブル購入処理
         $sql=$pdo->prepare('select *
                             from Cart inner join Stock on Cart.shohin_number = Stock.shohin_number
                             where Cart.member_number=?');
@@ -46,6 +46,15 @@
             //在庫数減らす
             $sql=$pdo->prepare('update Stock set stock_kazu=stock_kazu-? where shohin_number=?');
             $sql->execute([$row['cart_kazu'],$row['shohin_number']]);
+        }
+        //Ordersテーブル購入処理
+        $sql=$pdo->prepare('select *
+                            from Cart
+                            where member_number=?');
+        $sql->execute([$_SESSION['Member']['member_number']]);
+        foreach( $sql as $row ){
+            $sql=$pdo->prepare('insert into Orders values (?,?,?,?)');
+            $sql->execute([$row['shohin_number'],$row['member_number'],$row['cart_kazu'],date('Y-m-d H:i:s')]);
         }
         //カートリセット
         $sql=$pdo->prepare('delete from Cart where member_number=?');
