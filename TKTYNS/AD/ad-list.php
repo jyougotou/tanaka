@@ -30,7 +30,9 @@
         </tr>
 <?php
 $pdo = new PDO($connect, USER, PASS);
-foreach ($pdo->query('SELECT * FROM Shohin') as $row) {
+$sql = $pdo->query('SELECT * FROM Shohin inner join Stock on Shohin.shohin_number = Stock.shohin_number');
+foreach($sql as $row){
+
     echo '<tr>';
     echo '<td>', $row['shohin_number'], '</td>';
     echo '<td>', $row['shohin_mei'], '</td>';
