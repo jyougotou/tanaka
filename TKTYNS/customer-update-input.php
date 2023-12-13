@@ -11,6 +11,10 @@
 </head>
 <body>
     <?php
+        echo '<h1>情報更新会員登録</h1>';
+        echo '<form action = "product.php" method = "post">';
+            echo '<input type = "submit" class = "back-btn" value = "戻る">';
+        echo '</form>';
         if(isset($_SESSION['Member'])){
             $member_number=$_SESSION['Member']['member_number'];
             $member_mei=$_SESSION['Member']['member_mei'];
@@ -18,10 +22,6 @@
             $member_fon=$_SESSION['Member']['member_fon'];
             $member_pass=$_SESSION['Member']['member_pass'];
             //商品画面に遷移する
-            echo '<h1>情報更新会員登録</h1>';
-            echo '<form action = "product.php" method = "post">';
-                echo '<input type = "submit" class = "back-btn" value = "戻る">';
-            echo '</form>';
             //会員情報更新画面に遷移する
             echo '<form action = "customer-update-input.php" method = "post">';
                 echo '<table>';

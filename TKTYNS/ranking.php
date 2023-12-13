@@ -15,9 +15,11 @@
 <?php
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->query('select distinct shohin_sport from Detail');
-    echo '<form action="ranking.php" method="post">';
-        echo '<select name="sport">',"\n";
-            echo '<option hidden value="">スポーツ</option>';
+    echo '<form action="ranking.php" method="post" id="ranking">';
+        echo '<select name="sport" id="sport">',"\n";
+            if(empty($_POST['sport'])){
+                echo '<option hidden value="野球・ソフトボール" selected>野球・ソフトボール</option>';
+            }
             foreach($sql as $row){
                 if($row['shohin_sport']==$_POST['sport']){
                     echo '<option value="',$row['shohin_sport'],'" selected>',$row['shohin_sport'],'</option>',"\n";
@@ -26,13 +28,16 @@
                 }
             }
         echo '</select>',"\n";
-        echo '<input type="submit" class="glass" value="🔎">';
     echo '</form>';
     $sql=$pdo->prepare('select * 
                         from Shohin inner join Stock on Shohin.shohin_number = Stock.shohin_number inner join Detail on Stock.shohin_number = Detail.shohin_number
                         where Detail.shohin_sport=?
                         order by konyu_kazu desc limit 5');
-    $sql->execute([$_POST['sport']]);
+    if(!empty($_POST['sport'])){
+        $sql->execute([$_POST['sport']]);
+    }else{
+        $sql->execute(["野球・ソフトボール"]);
+    }
     echo '<table>',"\n";
     echo  '<tr><th>順位</th><th>商品名</th><th>価格</th></tr>',"\n";
     $num=1;
@@ -51,6 +56,13 @@
 ?>
 <form action = "product.php" methods = "post">
     <input type = "submit" class="back" value = "検索画面に戻る">
+</form>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script>
+  $(function(){
+    $("#sport").change(function(){
+      $("#ranking").submit();
+    });
+  });
+</script>
 <?php require 'footer.php'; ?>
-</body>
-</html>
