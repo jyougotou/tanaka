@@ -1,6 +1,5 @@
 <?php session_start(); ?>
 <?php require 'db-connect.php'; ?>
-<?php require 'header.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,12 +10,12 @@
 </head>
 <body>
     <!--商品画面に遷移する-->
-<form action="product.php" method="post">
+<form action="product.php" method="post" id="submit_form">
     <input type="text" name="keyword" placeholder="キーワードを検索" class = "searchBox" value="<?php echo $_POST['keyword']; ?>">
 <?php
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->query('select distinct shohin_sport from Detail');
-    echo '<select name="sport"  class = "select-btn" >',"\n";
+    echo '<select name="sport"  class = "select-btn" id="submit_item_1">',"\n";
         echo '<option hidden value="">スポーツ</option>';
         echo '<option value="">選択しない</option>';
         foreach($sql as $row){
@@ -28,7 +27,7 @@
         }
     echo '</select>',"\n";
     $sql=$pdo->query('select distinct shohin_burnd from Detail');
-    echo '<select name="burnd" class = "select-br">',"\n";
+    echo '<select name="burnd" class = "select-br" id="submit_item_2">',"\n";
         echo '<option hidden value="">ブランド</option>';
         echo '<option value="">選択しない</option>';
         foreach($sql as $row){
@@ -40,7 +39,7 @@
         }
     echo '</select>',"\n";
     $sql=$pdo->query('select distinct shohin_kate from Detail');
-    echo '<select name="category" class = "select-bs">',"\n";
+    echo '<select name="category" class = "select-bs" id="submit_item_3">',"\n";
         echo '<option hidden value="">カテゴリ</option>';
         echo '<option value="">選択しない</option>';
         foreach($sql as $row){
@@ -51,7 +50,7 @@
             }
         }
     echo '</select>',"\n";
-    echo '<select name="price" class = "select-pr">',"\n";
+    echo '<select name="price" class = "select-pr" id="submit_item_4">',"\n";
         echo '<option hidden value="">価格帯</option>';
         echo '<option value="">選択しない</option>';
         if(1==$_POST['price']){
@@ -298,9 +297,21 @@ foreach($sql as $row){
 echo '</div>';
 
 ?>
-</body>
-</html>
-
-
-
+<script src="js/jquery-3.7.1.min.js"></script>
+<script>
+  $(function(){
+    $("#submit_item_1").change(function(){
+      $("#submit_form").submit();
+    }),
+    $("#submit_item_2").change(function(){
+      $("#submit_form").submit();
+    }),
+    $("#submit_item_3").change(function(){
+      $("#submit_form").submit();
+    }),
+    $("#submit_item_4").change(function(){
+      $("#submit_form").submit();
+    });
+  });
+</script>
 <?php require 'footer.php'; ?>
